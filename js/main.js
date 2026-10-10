@@ -19,10 +19,12 @@ function initNavbar() {
   const mobileToggle = document.getElementById('mobileToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+  const ribbon = navbar?.querySelector('.nav-links');
   const sections = document.querySelectorAll('section[id]');
 
-  let isClickScrolling = false;
-  let clickTimeout = null;
+  // Prevent a long press from opening the browser's link menu or dragging a tab.
+  ribbon?.addEventListener('contextmenu', (event) => event.preventDefault());
+  ribbon?.addEventListener('dragstart', (event) => event.preventDefault());
 
   function setActiveLink(id) {
     navLinks.forEach((link) => {
@@ -42,8 +44,6 @@ function initNavbar() {
     } else {
       navbar.classList.remove('scrolled');
     }
-
-    if (isClickScrolling) return;
 
     // Active Section Spy
     const scrollPosition = window.scrollY + 120;
@@ -71,27 +71,25 @@ function initNavbar() {
     link.addEventListener('click', () => {
       const href = link.getAttribute('href');
       if (href && href.startsWith('#')) {
-        const targetId = href.substring(1);
-        setActiveLink(targetId);
-        isClickScrolling = true;
-        clearTimeout(clickTimeout);
-        clickTimeout = setTimeout(() => {
-          isClickScrolling = false;
-        }, 1200);
+        setActiveLink(href.substring(1));
       }
     });
   });
 
-  // Release scroll lock early once smooth scroll completes if supported
-  window.addEventListener('scrollend', () => {
-    if (isClickScrolling) {
-      clearTimeout(clickTimeout);
-      isClickScrolling = false;
-    }
-  });
-
   // Mobile Menu Toggle
   if (mobileToggle && mobileMenu) {
+    const closeMobileMenuOnDesktop = () => {
+      if (window.innerWidth > 768) {
+        mobileMenu.classList.remove('open');
+      }
+    };
+
+    closeMobileMenuOnDesktop();
+    window.addEventListener('resize', closeMobileMenuOnDesktop);
+    window.addEventListener('scroll', () => {
+      mobileMenu.classList.remove('open');
+    }, { passive: true });
+
     mobileToggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('open');
     });
