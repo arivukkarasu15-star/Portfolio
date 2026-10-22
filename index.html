@@ -27,7 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom Modern Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=navbar-border-fix-20261010">
+  <link rel="stylesheet" href="css/style.css?v=responsive-fluid-20261022">
 </head>
 <body class="bg-grid">
 
@@ -45,7 +45,6 @@
         <a href="#skills" class="nav-link" draggable="false">Skills</a>
         <a href="#projects" class="nav-link" draggable="false">Projects</a>
         <a href="#experience" class="nav-link" draggable="false">Experience</a>
-        <a href="#contact" class="nav-link" draggable="false">Contact</a>
       </nav>
 
       <!-- Mobile Menu Toggle -->
@@ -65,12 +64,6 @@
         <a href="#skills" class="mobile-nav-link">Skills</a>
         <a href="#projects" class="mobile-nav-link">Projects</a>
         <a href="#experience" class="mobile-nav-link">Experience</a>
-        <a href="#contact" class="mobile-nav-link">Contact</a>
-      </div>
-      <div style="padding-top:0.75rem; border-top:1px solid var(--border-color); display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-muted);">
-        <a href="https://github.com/arivukkarasu15-star" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);">GitHub</a>
-        <a href="https://linkedin.com/in/arivukkarasu-star" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);">LinkedIn</a>
-        <a href="mailto:arivukkarasu15@gmail.com" style="color:var(--text-secondary);">Email</a>
       </div>
     </div>
   </header>
@@ -124,22 +117,24 @@
 
           <!-- Social Links -->
           <div class="hero-social-row">
-            <span style="font-family:var(--font-mono); color:var(--text-muted);">Connect:</span>
+            <span class="hero-social-label">Connect</span>
+            <div class="hero-social-links">
             
-            <a href="https://github.com/arivukkarasu15-star" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              <span>arivukkarasu15-star</span>
-            </a>
-
-            <a href="https://linkedin.com/in/arivukkarasu-star" target="_blank" rel="noopener noreferrer" class="social-pill">
+            <a href="https://linkedin.com/in/arivukkarasu-star" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="LinkedIn profile">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-              <span>arivukkarasu-star</span>
+              <span>LinkedIn</span>
             </a>
 
-            <button class="social-pill btn-copy-email" style="border:1px solid var(--border-color); background:var(--bg-surface);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>arivukkarasu15@gmail.com</span>
-            </button>
+            <a href="mailto:arivukkarasu15@gmail.com" class="social-pill" aria-label="Email Arivukkarasu">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-.9.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Gmail</span>
+            </a>
+
+            <a href="https://github.com/arivukkarasu15-star" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="GitHub profile">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              <span>GitHub</span>
+            </a>
+            </div>
           </div>
 
         </div>
@@ -177,19 +172,19 @@
       <div class="section-header">
         <h2 class="section-title">About Me</h2>
         <p class="section-desc">
-          Computer Science graduate and Python developer with hands-on internship experience in data analytics and software development.
+          Computer Science graduate and Python developer focused on building practical, reliable software.
         </p>
       </div>
 
       <div class="about-two-col-grid">
-        <!-- Left: Bio & Quick Facts -->
+        <!-- Full-width About & Education panel -->
         <div class="about-card-box">
           <div style="display:flex; flex-direction:column; gap:0.9rem; font-size:0.95rem; color:#cbd5e1; line-height:1.65;">
             <p>
-              I am a Computer Science Engineering graduate with a strong focus on Python development and building practical, reliable web applications. My backend toolkit centers on Python, Django, FastAPI, and Flask, complemented by clean HTML5, CSS3, and JavaScript for responsive, accessible user interfaces.
+              I am a Computer Science Engineering graduate focused on Python full-stack development. I build web applications with Python, Django, FastAPI, and Flask, use SQL to organize application data, and create responsive interfaces with HTML, CSS, and JavaScript. My project work also includes connecting machine-learning and OCR workflows to web services, and building desktop utilities with PyWebView.
             </p>
             <p>
-              My practical experience combines building machine learning web services with OCR text extraction, desktop utilities with PyWebView, and a Data Analyst internship at Sun Plastics where I managed financial reporting, data cleaning, and reconciliation using Microsoft Excel and Tally ERP.
+              I like to understand what needs to be built before I start. Then I break the work into smaller tasks, build it step by step, and test as I go. I keep my code readable, share progress with teammates, and use feedback to make practical improvements. My goal is to deliver software that works reliably and is easy to use.
             </p>
           </div>
 
@@ -199,56 +194,61 @@
               <strong style="color:var(--accent); font-size:0.85rem; font-weight:600;">Python Full Stack</strong>
             </div>
             <div class="highlight-item" style="background:var(--bg-primary); border:1px solid var(--border-subtle); padding:0.6rem 0.85rem; border-radius:var(--radius-sm);">
-              <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--text-muted); display:block; text-transform:uppercase;">Internship</span>
-              <strong style="color:#fff; font-size:0.85rem; font-weight:600;">Sun Plastics (Data Analyst)</strong>
-            </div>
-            <div class="highlight-item" style="background:var(--bg-primary); border:1px solid var(--border-subtle); padding:0.6rem 0.85rem; border-radius:var(--radius-sm);">
               <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--text-muted); display:block; text-transform:uppercase;">Degree</span>
               <strong style="color:#fff; font-size:0.85rem; font-weight:600;">B.E. CSE (CGPA: 7.69)</strong>
             </div>
-            <div class="highlight-item" style="background:var(--bg-primary); border:1px solid var(--border-subtle); padding:0.6rem 0.85rem; border-radius:var(--radius-sm);">
-              <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--text-muted); display:block; text-transform:uppercase;">Location</span>
-              <strong style="color:var(--success); font-size:0.85rem; font-weight:600;">Madurai, India</strong>
+          </div>
+
+        <div class="about-education">
+          <div class="education-heading">
+            <div class="sub-card-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span>Education</span>
             </div>
+            <span class="education-kicker">ACADEMIC JOURNEY</span>
+          </div>
+
+          <div class="education-cards-grid">
+          <article class="edu-featured">
+            <div class="edu-feature-top">
+              <span class="edu-level">BACHELOR'S DEGREE</span>
+              <time datetime="2022">2022 – 2026</time>
+            </div>
+            <h3>B.E. Computer Science and Engineering</h3>
+            <p>Pandian Saraswathi Yadav Engineering College, Sivagangai</p>
+            <div class="edu-feature-bottom">
+              <span>Anna University</span>
+              <strong><small>CGPA</small> 7.69 <i>/ 10.0</i></strong>
+            </div>
+          </article>
+
+          <article class="edu-featured">
+            <div class="edu-feature-top">
+              <span class="edu-level">HIGHER SECONDARY · CLASS XII</span>
+              <time datetime="2021">2021 – 2022</time>
+            </div>
+            <h3>HSC — State Board of Tamil Nadu</h3>
+            <p>Annamalaiyaar Matric. Hr. Sec. School, Madurai</p>
+            <div class="edu-feature-bottom">
+              <span>Higher Secondary</span>
+              <strong><small>SCORE</small> 84<em>%</em></strong>
+            </div>
+          </article>
+
+          <article class="edu-featured">
+            <div class="edu-feature-top">
+              <span class="edu-level">SECONDARY · CLASS X</span>
+              <time datetime="2019">2019 – 2020</time>
+            </div>
+            <h3>SSLC — State Board of Tamil Nadu</h3>
+            <p>C.E.O.A Matric. Hr. Sec. School, Madurai</p>
+            <div class="edu-feature-bottom">
+              <span>Secondary School</span>
+              <strong><small>SCORE</small> 91.2<em>%</em></strong>
+            </div>
+          </article>
           </div>
         </div>
-
-        <!-- Right: Education -->
-        <div class="sub-card about-edu-card">
-          <div class="sub-card-title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            <span>Education</span>
-          </div>
-
-          <div class="edu-item">
-            <div class="edu-degree">B.E. Computer Science and Engineering</div>
-            <div class="edu-inst">Pandian Saraswathi Yadav Engineering College, Sivagangai</div>
-            <div class="edu-meta">
-              <span>Anna University</span>
-              <strong style="color:var(--accent);">CGPA: 7.69 / 10.0</strong>
-              <span>2022 – 2026</span>
-            </div>
-          </div>
-
-          <div class="edu-item">
-            <div class="edu-degree">HSC (Class XII) — State Board of Tamil Nadu</div>
-            <div class="edu-inst">Annamalaiyaar Matric. Hr. Sec. School, Madurai</div>
-            <div class="edu-meta">
-              <span>Higher Secondary</span>
-              <strong style="color:var(--accent);">Score: 84%</strong>
-              <span>2021 – 2022</span>
-            </div>
-          </div>
-
-          <div class="edu-item" style="margin-bottom:0;">
-            <div class="edu-degree">SSLC (Class X) — State Board of Tamil Nadu</div>
-            <div class="edu-inst">C.E.O.A Matric. Hr. Sec. School, Madurai</div>
-            <div class="edu-meta">
-              <span>Secondary School</span>
-              <strong style="color:var(--accent);">Score: 91.2%</strong>
-              <span>2019 – 2020</span>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -580,8 +580,8 @@
               </div>
             </div>
 
-            <div style="display:flex; flex-wrap:wrap; gap:0.4rem; padding-top:0.5rem; border-top:1px solid var(--border-subtle);">
-              <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); align-self:center;">Skills Applied:</span>
+            <div class="experience-skills">
+              <span class="experience-skills-label">Skills applied</span>
               <span class="tech-tag">Microsoft Excel</span>
               <span class="tech-tag">Tally ERP</span>
               <span class="tech-tag">Data Cleaning</span>
@@ -595,116 +595,16 @@
       </div>
 
     </div>
-  </section>
-
-  <!-- =========================================================================
-       CONTACT SECTION
-       ========================================================================= -->
-  <section class="section" id="contact">
-    <div class="container">
-      
-      <div class="section-header">
-        <h2 class="section-title">Let's Build Something Together</h2>
-        <p class="section-desc">
-          I am actively seeking Python Full Stack Developer opportunities. Feel free to reach out directly via email, connect on LinkedIn, or compose a pre-filled draft below.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        
-        <!-- Left: Direct Channels Card -->
-        <div class="contact-card-box" style="height:100%; justify-content:space-between;">
-          <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border-color);">
-              <h3 style="font-size:1.15rem; font-weight:700; color:#fff;">Direct Contact</h3>
-              <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--success);">Available for Hire</span>
-            </div>
-
-            <!-- Email Item -->
-            <div style="background:var(--bg-primary); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius-md); margin-bottom:1rem;">
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
-                <span style="font-family:var(--font-mono); font-size:0.725rem; color:var(--text-muted); text-transform:uppercase;">Direct Email</span>
-                <button class="btn-copy-email social-pill" style="cursor:pointer; padding:0.2rem 0.55rem; font-size:0.725rem;">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  <span>Copy</span>
-                </button>
-              </div>
-              <a href="mailto:arivukkarasu15@gmail.com" style="font-size:1.05rem; font-weight:700; color:var(--accent); word-break:break-all;">
-                arivukkarasu15@gmail.com
-              </a>
-            </div>
-
-            <!-- Profiles Grid -->
-            <div class="contact-channel-row" style="margin-bottom:1rem;">
-              <a href="https://linkedin.com/in/arivukkarasu-star" target="_blank" rel="noopener noreferrer" class="channel-card">
-                <div class="brand-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                </div>
-                <h4>LinkedIn</h4>
-                <span>arivukkarasu-star</span>
-              </a>
-
-              <a href="https://github.com/arivukkarasu15-star" target="_blank" rel="noopener noreferrer" class="channel-card">
-                <div class="brand-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                </div>
-                <h4>GitHub</h4>
-                <span>arivukkarasu15-star</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Bottom Location Pill -->
-          <div style="background:var(--bg-primary); border:1px solid var(--border-subtle); padding:0.85rem 1rem; border-radius:var(--radius-md); display:flex; justify-content:space-between; align-items:center;">
-            <div style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--text-secondary);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Location: <strong style="color:#fff;">Madurai, India</strong></span>
-            </div>
-            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--success);">Open to Relocation</span>
-          </div>
+    <footer class="site-footer">
+      <div class="container site-footer-inner">
+        <p class="site-footer-copy">© <span id="footerYear">2026</span> Arivukkarasu K</p>
+        <div class="site-footer-contact" aria-label="Contact links">
+          <a href="mailto:arivukkarasu15@gmail.com">arivukkarasu15@gmail.com</a>
+          <a href="https://linkedin.com/in/arivukkarasu-star" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/arivukkarasu15-star" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-
-        <!-- Right: Email Draft Form -->
-        <div class="contact-form-card">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border-color);">
-            <h3 style="font-size:1.15rem; font-weight:700; color:#fff;">Compose Email Message</h3>
-            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">Direct Draft</span>
-          </div>
-
-          <form id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contactName">Your Name <span style="color:var(--accent);">*</span></label>
-                <input type="text" id="contactName" placeholder="e.g. Recruiter / Hiring Lead" required>
-              </div>
-
-              <div class="form-group">
-                <label for="contactEmail">Your Email <span style="color:var(--accent);">*</span></label>
-                <input type="email" id="contactEmail" placeholder="e.g. recruiter@company.com" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="contactSubject">Subject / Position</label>
-              <input type="text" id="contactSubject" placeholder="e.g. Python Full Stack Developer Discussion">
-            </div>
-
-            <div class="form-group">
-              <label for="contactMessage">Message <span style="color:var(--accent);">*</span></label>
-              <textarea id="contactMessage" rows="4" placeholder="Hi Arivukkarasu, I reviewed your portfolio and would like to discuss an opportunity..." required></textarea>
-              <span class="form-hint">Submitting opens your email client with your message drafted to arivukkarasu15@gmail.com</span>
-            </div>
-
-            <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:0.85rem;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              <span>Draft Email to Arivukkarasu</span>
-            </button>
-          </form>
-        </div>
-
       </div>
-
-    </div>
+    </footer>
   </section>
 
   <!-- =========================================================================
@@ -752,9 +652,8 @@
   </div>
 
 
-
   <!-- Scripts -->
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/data.js?v=home-social-only-20261022"></script>
+  <script src="js/main.js?v=home-social-only-20261022"></script>
 </body>
 </html>

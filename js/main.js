@@ -7,7 +7,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initProjects();
-  initContactForm();
   initScrollTop();
 });
 
@@ -50,7 +49,7 @@ function initNavbar() {
     const scrollBottom = (window.innerHeight + Math.round(window.scrollY)) >= (document.documentElement.scrollHeight - 50);
 
     if (scrollBottom) {
-      setActiveLink('contact');
+      setActiveLink(sections[sections.length - 1]?.id || 'home');
       return;
     }
 
@@ -131,6 +130,7 @@ function initProjects() {
             </div>
             <h3 class="pcard-title">${project.title}</h3>
             <p class="pcard-desc">${project.subtitle}</p>
+            <p class="pcard-feature"><span>Key feature</span>${project.features[0]}</p>
             <div class="pcard-tags">
               ${project.techStack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
             </div>
@@ -216,66 +216,8 @@ window.closeProjectModal = function() {
 };
 
 /* -------------------------------------------------------------------------
-   3. CONTACT FORM & ACTIONS
+   3. UTILS: SCROLL TOP
    ------------------------------------------------------------------------- */
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const copyEmailBtns = document.querySelectorAll('.btn-copy-email');
-
-  copyEmailBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      navigator.clipboard.writeText(portfolioData.personalInfo.email).then(() => {
-        showToast(`Copied email: ${portfolioData.personalInfo.email}`);
-      });
-    });
-  });
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('contactName')?.value.trim();
-      const email = document.getElementById('contactEmail')?.value.trim();
-      const subject = document.getElementById('contactSubject')?.value.trim() || `Portfolio Inquiry from ${name}`;
-      const message = document.getElementById('contactMessage')?.value.trim();
-
-      if (!name || !email || !message) {
-        showToast('Please fill in all required fields.', 'error');
-        return;
-      }
-
-      // Encode mailto
-      const mailtoUrl = `mailto:${portfolioData.personalInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Arivukkarasu,\n\n${message}\n\nFrom: ${name} (${email})`)}`;
-      window.location.href = mailtoUrl;
-      showToast('Opening your email client to draft message...');
-    });
-  }
-}
-
-/* -------------------------------------------------------------------------
-   4. UTILS: TOAST & SCROLL TOP
-   ------------------------------------------------------------------------- */
-function showToast(message) {
-  let toast = document.getElementById('toastNotification');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'toastNotification';
-    toast.className = 'toast-container';
-    document.body.appendChild(toast);
-  }
-
-  toast.innerHTML = `
-    <span style="color:#38bdf8;">ℹ</span>
-    <span>${message}</span>
-  `;
-  toast.classList.add('show');
-
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 3500);
-}
-window.showToast = showToast;
-
 function initScrollTop() {
   const btn = document.getElementById('scrollTopBtn');
   if (btn) {
