@@ -27,7 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom Modern Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=responsive-fluid-20261022">
+  <link rel="stylesheet" href="css/style.css?v=portrait-status-attached-20261022">
 </head>
 <body class="bg-grid">
 
@@ -36,8 +36,6 @@
        ========================================================================= -->
   <header class="navbar" id="navbar">
     <div class="container nav-container">
-      
-
       <!-- Desktop Navigation Links -->
       <nav class="nav-links">
         <a href="#home" class="nav-link active" draggable="false">Home</a>
@@ -49,7 +47,7 @@
 
       <!-- Mobile Menu Toggle -->
       <div class="nav-actions">
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
@@ -57,7 +55,7 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div class="mobile-menu" id="mobileMenu" style="display: none !important;">
+    <div class="mobile-menu" id="mobileMenu">
       <div class="mobile-nav-grid">
         <a href="#home" class="mobile-nav-link active">Home</a>
         <a href="#about" class="mobile-nav-link">About</a>
@@ -77,12 +75,6 @@
         
         <!-- Left: Recruiter-first Hero Content -->
         <div class="hero-left">
-          
-          <div class="hero-status-pill">
-            <span class="status-dot"></span>
-            <span>Entry-Level / Fresher • Available for Hire</span>
-          </div>
-
           <div class="hero-title-group">
             <h1>Arivukkarasu K</h1>
             <h2>Python Full Stack Developer</h2>
@@ -148,12 +140,17 @@
             <!-- Image Frame -->
             <div class="hero-photo-frame">
               <img src="assets/profile.jpg" alt="Arivukkarasu K" class="hero-large-photo">
+
+              <!-- Location badge stays attached to the lower edge of the photo. -->
+              <div class="portrait-badge-bottom" style="justify-content:center; gap:0.5rem;">
+                <span class="status-dot"></span>
+                <span style="font-size:0.8rem; font-family:var(--font-mono); color:#f1f5f9;">Madurai, India • Open to Relocation</span>
+              </div>
             </div>
 
-            <!-- Bottom floating glass badge -->
-            <div class="portrait-badge-bottom" style="justify-content:center; gap:0.5rem;">
+            <div class="hero-status-pill">
               <span class="status-dot"></span>
-              <span style="font-size:0.8rem; font-family:var(--font-mono); color:#f1f5f9;">Madurai, India • Open to Relocation</span>
+              <span>Entry-Level / Fresher • Available for Hire</span>
             </div>
 
           </div>
@@ -654,6 +651,6 @@
 
   <!-- Scripts -->
   <script src="js/data.js?v=home-social-only-20261022"></script>
-  <script src="js/main.js?v=home-social-only-20261022"></script>
+  <script src="js/main.js?v=mobile-header-footer-20261022"></script>
 </body>
 </html>

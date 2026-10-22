@@ -21,6 +21,12 @@ function initNavbar() {
   const ribbon = navbar?.querySelector('.nav-links');
   const sections = document.querySelectorAll('section[id]');
 
+  const setMobileMenuOpen = (open) => {
+    mobileMenu?.classList.toggle('open', open);
+    mobileToggle?.setAttribute('aria-expanded', String(open));
+    mobileToggle?.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  };
+
   // Prevent a long press from opening the browser's link menu or dragging a tab.
   ribbon?.addEventListener('contextmenu', (event) => event.preventDefault());
   ribbon?.addEventListener('dragstart', (event) => event.preventDefault());
@@ -79,25 +85,29 @@ function initNavbar() {
   if (mobileToggle && mobileMenu) {
     const closeMobileMenuOnDesktop = () => {
       if (window.innerWidth > 768) {
-        mobileMenu.classList.remove('open');
+        setMobileMenuOpen(false);
       }
     };
 
     closeMobileMenuOnDesktop();
     window.addEventListener('resize', closeMobileMenuOnDesktop);
     window.addEventListener('scroll', () => {
-      mobileMenu.classList.remove('open');
+      setMobileMenuOpen(false);
     }, { passive: true });
 
     mobileToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
+      setMobileMenuOpen(!mobileMenu.classList.contains('open'));
     });
 
     // Close mobile menu on click link
     document.querySelectorAll('.mobile-nav-link').forEach((link) => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
+        setMobileMenuOpen(false);
       });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false);
     });
   }
 }
