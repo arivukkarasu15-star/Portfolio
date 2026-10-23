@@ -11,7 +11,7 @@ const portfolioData = {
     shortIntro: "Computer Science Engineering graduate with practical experience in Python development through internships and projects. Skilled in Python, Django, FastAPI, SQL, HTML, CSS, JavaScript, Git, and Docker, with experience building and deploying machine learning applications.",
     status: "Actively Seeking Opportunities",
     availability: "Open to Entry-Level Web Developer & Python Full Stack Roles",
-    location: "Madurai, India",
+    location: "Madurai",
     phone: "+91 8489065398",
     email: "arivukkarasu15@gmail.com",
     githubUrl: "https://github.com/arivukkarasu15-star",
@@ -96,6 +96,8 @@ const portfolioData = {
         "Live news source cross-checking for verification",
         "Containerized with Docker for deployment"
       ],
+      liveDemoUrl: "https://huggingface.co/spaces/Arivu104/fake-news-detection",
+      liveDemoLabel: "Hugging Face Space",
       githubUrl: "https://github.com/arivukkarasu15-star/Fake-News-Detection-Using-ML",
       stats: {
         languages: "English & Tamil",
@@ -118,6 +120,8 @@ const portfolioData = {
         "Category-based expense classification and date-based filtering",
         "Calculation of category totals and monthly summaries"
       ],
+      liveDemoUrl: "https://audit-flows.netlify.app",
+      liveDemoLabel: "AuditFlow",
       githubUrl: "https://github.com/arivukkarasu15-star/Expense-Tracker",
       stats: {
         wrapper: "PyWebView",
@@ -140,6 +144,8 @@ const portfolioData = {
         "Responsive user interface built with HTML, CSS, and vanilla JavaScript",
         "Runs locally with zero external network dependencies"
       ],
+      liveDemoUrl: "https://tick-it-app.netlify.app",
+      liveDemoLabel: "Tick-IT",
       githubUrl: "https://github.com/arivukkarasu15-star/To-Do-App",
       stats: {
         framework: "Python Flask",
