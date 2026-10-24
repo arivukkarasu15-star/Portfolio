@@ -2289,6 +2289,7 @@ input:focus, textarea:focus {
 
 /* Refined, even project cards across the three portfolio projects. */
 .projects-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(0.9rem, 1.5vw, 1.25rem);
 }
 
@@ -2364,6 +2365,174 @@ input:focus, textarea:focus {
 .pcard-btn-gh:focus-visible {
   outline: 2px solid #7dd3fc;
   outline-offset: 2px;
+}
+
+/* Project detail dialog */
+.modal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  padding: clamp(1.15rem, 3vw, 2rem);
+  border-radius: 1.15rem;
+  background: linear-gradient(155deg, #111621, #0c0f17 76%);
+}
+
+.modal-header {
+  padding: 0 2.25rem 1rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modal-category {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--border-accent);
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.modal-header h2 {
+  margin-top: 0.75rem;
+  color: #fff;
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.modal-header p,
+.modal-section > p,
+.project-problem-box p {
+  margin-top: 0.35rem;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.modal-section {
+  margin: 0;
+}
+
+.modal-section h3 {
+  margin-bottom: 0.6rem;
+  color: #f8fafc;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.project-problem-box {
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-left: 3px solid var(--accent);
+  border-radius: 0.75rem;
+  background: rgba(56, 189, 248, 0.055);
+}
+
+.project-problem-box strong {
+  color: var(--accent);
+  font-size: 0.78rem;
+}
+
+.project-problem-box p {
+  margin-top: 0.3rem;
+  color: #dbe5f1;
+}
+
+.modal-features {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.modal-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 0.7rem;
+  background: rgba(5, 8, 14, 0.34);
+  color: #d4deeb;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.modal-feature-check {
+  flex: 0 0 auto;
+  color: #34d399;
+  font-weight: 800;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-tech-tags .tech-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.8rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+
+.modal-actions > a {
+  display: inline-flex;
+  flex: 1 1 0;
+  min-height: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-backdrop {
+    align-items: flex-end;
+    padding: 0.5rem;
+  }
+
+  .modal-card {
+    width: 100%;
+    max-height: min(88dvh, 760px);
+    gap: 0.9rem;
+    padding: 1.1rem;
+    border-radius: 1rem 1rem 0.75rem 0.75rem;
+  }
+
+  .modal-header {
+    padding-right: 2rem;
+  }
+
+  .modal-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.55rem;
+    padding-top: 0.85rem;
+  }
+
+  .modal-actions > a {
+    width: 100%;
+    min-height: 2.9rem;
+    box-sizing: border-box;
+  }
 }
 
 @media (max-width: 768px) {

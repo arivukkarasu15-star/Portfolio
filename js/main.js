@@ -123,7 +123,8 @@ function initProjects() {
   const catMap = {
     'AI & Machine Learning': { color: '#a78bfa', label: 'AI & ML' },
     'Python Web App':        { color: '#34d399', label: 'Web App' },
-    'Python Desktop App':    { color: '#fbbf24', label: 'Desktop App' }
+    'Python Desktop App':    { color: '#fbbf24', label: 'Desktop App' },
+    'Notes App':             { color: '#86efac', label: 'Notes App' }
   };
 
   if (projectsGrid) {
@@ -201,8 +202,8 @@ window.openProjectModal = function(projectId) {
 
   if (modalFeatures) {
     modalFeatures.innerHTML = project.features.map(f => `
-      <div style="display:flex; align-items:flex-start; gap:0.5rem; background:rgba(9,10,15,0.6); padding:0.65rem 0.85rem; border-radius:6px; font-size:0.85rem; color:#cbd5e1; border:1px solid #1a1e2e;">
-        <span style="color:#34d399; margin-top:0.1rem;">✓</span>
+      <div class="modal-feature-item">
+        <span class="modal-feature-check" aria-hidden="true">✓</span>
         <span>${f}</span>
       </div>
     `).join('');

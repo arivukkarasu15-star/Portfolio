@@ -27,7 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom Modern Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=project-cards-refined-20261023">
+  <link rel="stylesheet" href="css/style.css?v=notebook-project-mobile-details-20261024">
 </head>
 <body class="bg-grid">
 
@@ -514,7 +514,7 @@
       <div class="section-header">
         <h2 class="section-title">Featured Projects</h2>
         <p class="section-desc">
-          Top applications showcasing Python development, Machine Learning, OCR, PyWebView, Flask, and frontend integration.
+          Web and desktop apps built with Python, machine learning, OCR, and modern frontend technologies.
         </p>
       </div>
 
@@ -613,29 +613,29 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
 
-      <div style="margin-bottom:1.5rem; padding-right:2rem;">
-        <span id="modalCategory" style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent); background:var(--accent-bg); padding:0.2rem 0.6rem; border-radius:9999px; border:1px solid var(--border-accent); font-weight:600;">Category</span>
-        <h2 id="modalTitle" style="font-size:1.65rem; font-weight:800; color:#fff; margin-top:0.5rem;">Project Title</h2>
-        <p id="modalSubtitle" style="font-size:0.9rem; color:var(--text-secondary); margin-top:0.2rem;">Subtitle</p>
+      <div class="modal-header">
+        <span id="modalCategory" class="modal-category">Category</span>
+        <h2 id="modalTitle">Project Title</h2>
+        <p id="modalSubtitle">Subtitle</p>
       </div>
 
-      <div class="project-problem-box" style="margin-bottom:1.25rem;">
-        <strong style="color:var(--accent); display:block; font-size:0.8rem; margin-bottom:0.25rem;">Problem It Solves:</strong>
-        <p id="modalProblem" style="font-size:0.875rem; color:#e2e8f0;"></p>
+      <div class="project-problem-box modal-section">
+        <strong>Problem It Solves</strong>
+        <p id="modalProblem"></p>
       </div>
 
-      <div style="margin-bottom:1.25rem;">
-        <h4 style="font-size:0.9rem; font-weight:700; color:#fff; margin-bottom:0.4rem;">Overview</h4>
-        <p id="modalDesc" style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;"></p>
+      <div class="modal-section">
+        <h3>Overview</h3>
+        <p id="modalDesc"></p>
       </div>
 
-      <div style="margin-bottom:1.25rem;">
-        <h4 style="font-size:0.9rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Implementation Highlights</h4>
-        <div id="modalFeatures" style="display:flex; flex-direction:column; gap:0.4rem;"></div>
+      <div class="modal-section">
+        <h3>Implementation Highlights</h3>
+        <div id="modalFeatures" class="modal-features"></div>
       </div>
 
-      <div style="margin-bottom:1.5rem;">
-        <h4 style="font-size:0.9rem; font-weight:700; color:#fff; margin-bottom:0.4rem;">Technologies Used</h4>
+      <div class="modal-section modal-tech-section">
+        <h3>Technologies Used</h3>
         <div id="modalTech" class="project-tech-tags"></div>
       </div>
 
@@ -654,7 +654,7 @@
 
 
   <!-- Scripts -->
-  <script src="js/data.js?v=project-live-links-20261023"></script>
-  <script src="js/main.js?v=project-live-links-20261023"></script>
+  <script src="js/data.js?v=notebook-project-mobile-details-20261024"></script>
+  <script src="js/main.js?v=notebook-project-mobile-details-20261024"></script>
 </body>
 </html>

@@ -152,6 +152,31 @@ const portfolioData = {
         storage: "Local Storage",
         ui: "HTML5 / CSS3 / JS"
       }
+    },
+    {
+      id: "notebook-app",
+      title: "Notebook",
+      subtitle: "A lightweight notes app for capturing and organizing ideas",
+      category: "Notes App",
+      badge: "Web & Desktop App",
+      description: "A responsive notes app built with HTML, CSS, and JavaScript. It runs as a website on Netlify and can also be opened as a desktop app with a Python PyWebView wrapper.",
+      problemSolved: "Makes it easy to create, find, and manage personal notes from a simple web or desktop interface.",
+      techStack: ["HTML5", "CSS3", "JavaScript", "Python", "PyWebView"],
+      features: [
+        "Create, edit, and delete notes",
+        "Search notes by title or content",
+        "Switch between light and dark themes",
+        "Responsive layout for different screen sizes",
+        "Optional desktop launcher using Python and PyWebView"
+      ],
+      liveDemoUrl: "https://notesbyarivu.netlify.app",
+      liveDemoLabel: "Notebook",
+      githubUrl: "https://github.com/arivukkarasu15-star/notes-app",
+      stats: {
+        frontend: "HTML / CSS / JavaScript",
+        desktop: "Python + PyWebView",
+        deployment: "Netlify"
+      }
     }
   ],
 
