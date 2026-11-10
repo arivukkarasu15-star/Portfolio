@@ -115,52 +115,102 @@ function initNavbar() {
 /* -------------------------------------------------------------------------
    2. PROJECTS & MODAL
    ------------------------------------------------------------------------- */
+const projectCategoryMap = {
+  'AI & Machine Learning': {
+    color: '#a78bfa',
+    rgb: '167, 139, 250',
+    label: 'AI & ML',
+    badge: 'ML & OCR App',
+    icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z"/><path d="M18 10a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4v-1a4 4 0 0 1 4-4z"/><path d="M6 10a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4v-1a4 4 0 0 1 4-4z"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>`
+  },
+  'Python Desktop App': {
+    color: '#fbbf24',
+    rgb: '251, 191, 36',
+    label: 'Desktop App',
+    badge: 'PyWebView • Chart.js',
+    icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="m7 10 3 3 7-7"/></svg>`
+  },
+  'Python Web App': {
+    color: '#34d399',
+    rgb: '52, 211, 153',
+    label: 'Web App',
+    badge: 'Flask Task Manager',
+    icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`
+  },
+  'Notes App': {
+    color: '#38bdf8',
+    rgb: '56, 189, 248',
+    label: 'Notes App',
+    badge: 'Web & Desktop App',
+    icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`
+  }
+};
+
 function initProjects() {
   const projectsGrid = document.getElementById('projectsGrid');
   const modalBackdrop = document.getElementById('projectModal');
   const modalClose = document.getElementById('modalClose');
 
-  const catMap = {
-    'AI & Machine Learning': { color: '#a78bfa', label: 'AI & ML' },
-    'Python Web App':        { color: '#34d399', label: 'Web App' },
-    'Python Desktop App':    { color: '#fbbf24', label: 'Desktop App' },
-    'Notes App':             { color: '#86efac', label: 'Notes App' }
-  };
-
   if (projectsGrid) {
     projectsGrid.innerHTML = portfolioData.projects.map((project) => {
-      const cat = catMap[project.category] || { color: '#38bdf8', label: project.category };
+      const cat = projectCategoryMap[project.category] || {
+        color: '#38bdf8',
+        rgb: '56, 189, 248',
+        label: project.category,
+        badge: project.badge || 'Application',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>`
+      };
+
       return `
-        <div class="pcard">
-          <div class="pcard-accent" style="background:${cat.color};"></div>
+        <article class="pcard" style="--p-color:${cat.color}; --p-rgb:${cat.rgb};">
+          <div class="pcard-accent-beam"></div>
+          <div class="pcard-radial-glow"></div>
+
           <div class="pcard-body">
             <div class="pcard-top">
-              <span class="pcard-badge" style="color:${cat.color}; border-color:${cat.color}33; background:${cat.color}15;">
-                ${cat.label}
-              </span>
+              <div class="pcard-badge">
+                <span class="pcard-badge-icon">${cat.icon}</span>
+                <span>${cat.label}</span>
+              </div>
+              <span class="pcard-badge-meta">${cat.badge}</span>
             </div>
-            <h3 class="pcard-title">${project.title}</h3>
-            <p class="pcard-desc">${project.subtitle}</p>
-            <p class="pcard-feature"><span>Key feature</span>${project.features[0]}</p>
+
+            <div class="pcard-heading">
+              <h3 class="pcard-title">${project.title}</h3>
+              <p class="pcard-desc">${project.subtitle}</p>
+            </div>
+
+            <ul class="pcard-highlights" aria-label="Key features of ${project.title}">
+              ${project.features.slice(0, 3).map(feature => `
+                <li>
+                  <span class="highlight-icon" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                  </span>
+                  <span class="highlight-text">${feature}</span>
+                </li>
+              `).join('')}
+            </ul>
+
             <div class="pcard-tags">
               ${project.techStack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
             </div>
           </div>
+
           <div class="pcard-footer">
-            <button class="pcard-btn-detail" onclick="openProjectModal('${project.id}')">
-              Details
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            <button class="pcard-btn-detail" onclick="openProjectModal('${project.id}')" aria-label="View detailed overview of ${project.title}">
+              <span>Details</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
             </button>
             <a href="${project.liveDemoUrl}" target="_blank" rel="noopener noreferrer" class="pcard-btn-live" aria-label="Open ${project.title} live demo">
-              Live Demo
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6"/></svg>
+              <span>Live Demo</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6"/></svg>
             </a>
-            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="pcard-btn-gh">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              GitHub
+            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="pcard-btn-gh" aria-label="View ${project.title} source code on GitHub">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              <span>GitHub</span>
             </a>
           </div>
-        </div>
+        </article>
       `;
     }).join('');
   }
@@ -203,7 +253,9 @@ window.openProjectModal = function(projectId) {
   if (modalFeatures) {
     modalFeatures.innerHTML = project.features.map(f => `
       <div class="modal-feature-item">
-        <span class="modal-feature-check" aria-hidden="true">✓</span>
+        <span class="modal-feature-icon" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </span>
         <span>${f}</span>
       </div>
     `).join('');
@@ -222,7 +274,11 @@ window.openProjectModal = function(projectId) {
     modalDemoBtn.setAttribute('aria-label', `Open ${project.title} live demo`);
   }
 
+  const cat = projectCategoryMap[project.category] || { color: '#38bdf8', rgb: '56, 189, 248' };
+
   if (modalBackdrop) {
+    modalBackdrop.style.setProperty('--modal-accent-color', cat.color);
+    modalBackdrop.style.setProperty('--modal-accent-rgb', cat.rgb);
     modalBackdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
   }

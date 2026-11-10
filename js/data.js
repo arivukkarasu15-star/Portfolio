@@ -90,9 +90,9 @@ const portfolioData = {
       problemSolved: "Assists in identifying potential misinformation in multilingual digital news by extracting text from article screenshots and applying machine learning classification.",
       techStack: ["Python", "Flask", "scikit-learn", "Pandas", "Tesseract OCR", "Docker"],
       features: [
-        "Bilingual classification supporting English and Tamil text content",
-        "Integrated Tesseract OCR to extract text directly from article images without manual typing",
-        "AI-based fallback mechanism to handle uncertain or ambiguous predictions",
+        "Classifies English and Tamil news text to help flag potentially misleading articles",
+        "Extracts article text from uploaded images with Tesseract OCR, without manual transcription",
+        "Uses an AI fallback when predictions are uncertain and checks live sources for context",
         "Live news source cross-checking for verification",
         "Containerized with Docker for deployment"
       ],
@@ -115,9 +115,9 @@ const portfolioData = {
       problemSolved: "Provides an offline-capable tool to record daily expenses, categorize spending habits, and view financial summary charts.",
       techStack: ["Python", "PyWebView", "JavaScript", "HTML5", "CSS3"],
       features: [
-        "Interactive expenditure visualization using Chart.js graphs",
-        "Desktop application wrapper using PyWebView to render HTML/CSS/JS natively",
-        "Category-based expense classification and date-based filtering",
+        "Visualizes spending patterns and category totals with interactive Chart.js graphs",
+        "Runs as a desktop app through PyWebView, combining Python with HTML, CSS, and JavaScript",
+        "Groups expenses by category and filters records by date to review spending over time",
         "Calculation of category totals and monthly summaries"
       ],
       liveDemoUrl: "https://audit-flows.netlify.app",
@@ -139,9 +139,9 @@ const portfolioData = {
       problemSolved: "Offers a lightweight offline task management tool to organize daily deliverables without requiring internet connectivity.",
       techStack: ["Python", "Flask", "HTML5", "CSS3", "JavaScript"],
       features: [
-        "Task lifecycle state updates (Pending, In Progress, Completed)",
-        "Flask backend handling local task records and state changes",
-        "Responsive user interface built with HTML, CSS, and vanilla JavaScript",
+        "Moves tasks through Pending, In Progress, and Completed states as work progresses",
+        "Uses a Flask backend to manage task records and save status changes locally",
+        "Provides a responsive task interface built with HTML, CSS, and vanilla JavaScript",
         "Runs locally with zero external network dependencies"
       ],
       liveDemoUrl: "https://tick-it-app.netlify.app",
@@ -163,9 +163,9 @@ const portfolioData = {
       problemSolved: "Makes it easy to create, find, and manage personal notes from a simple web or desktop interface.",
       techStack: ["HTML5", "CSS3", "JavaScript", "Python", "PyWebView"],
       features: [
-        "Create, edit, and delete notes",
-        "Search notes by title or content",
-        "Switch between light and dark themes",
+        "Create, edit, and delete notes in one simple, lightweight workspace",
+        "Search note titles and content to find saved information more quickly",
+        "Switch between light and dark themes in a responsive app for different screens",
         "Responsive layout for different screen sizes",
         "Optional desktop launcher using Python and PyWebView"
       ],
@@ -186,7 +186,7 @@ const portfolioData = {
       role: "Data Analyst Intern",
       company: "Sun Plastics",
       duration: "07/2025 – 10/2025",
-      location: "Tamil Nadu, India",
+      location: "Madurai",
       description: "Analyzed business datasets, maintained transactional records in Tally ERP, and prepared daily and monthly operational reports.",
       responsibilities: [
         "Analyzed and maintained business data using Microsoft Excel, including data cleaning, sorting, filtering, formulas, and pivot tables.",
@@ -195,6 +195,20 @@ const portfolioData = {
         "Maintained accurate records and performed data validation and reconciliation to ensure consistency between Excel reports and Tally ERP data."
       ],
       skillsApplied: ["Microsoft Excel", "Tally ERP", "Data Cleaning", "Pivot Tables", "Financial Reconciliation", "Business Reporting"]
+    },
+    {
+      id: "phoenix-softech-intern",
+      role: "Data Science Intern",
+      company: "Phoenix Softech",
+      duration: "02/2025 – 03/2025",
+      location: "Madurai",
+      description: "Underwent professional internship training focused on data manipulation, dataset preprocessing, and applied analytical problem-solving.",
+      responsibilities: [
+        "Applied Python, Pandas, and NumPy for data manipulation, processing, and analysis during Data Science internship training.",
+        "Performed data cleaning and preprocessing to improve data quality and ensure accurate analysis.",
+        "Utilized data science tools and analytical techniques to identify patterns, interpret datasets, and develop data-driven problem-solving skills."
+      ],
+      skillsApplied: ["Python", "Pandas", "NumPy", "Data Analysis", "Data Cleaning", "Data Preprocessing", "Data Manipulation"]
     }
   ],
 

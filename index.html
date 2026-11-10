@@ -27,7 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom Modern Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=notebook-project-mobile-details-20261024">
+  <link rel="stylesheet" href="css/style.css?v=experience-madurai-ui-20261110">
 </head>
 <body class="bg-grid">
 
@@ -44,13 +44,6 @@
         <a href="#projects" class="nav-link" draggable="false">Projects</a>
         <a href="#experience" class="nav-link" draggable="false">Experience</a>
       </nav>
-
-      <!-- Mobile Menu Toggle -->
-      <div class="nav-actions">
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-      </div>
 
     </div>
 
@@ -81,7 +74,7 @@
           </div>
 
           <p class="hero-intro">
-            Computer Science Engineering graduate with practical experience in Python development through internships and projects. Skilled in Python, Django, FastAPI, SQL, HTML, CSS, JavaScript, Git, and Docker, with experience building and deploying machine learning applications.
+            Computer Science Engineering graduate with practical experience in Python development through internships and projects. Skilled in Python, Django, FastAPI, React, SQL, HTML, CSS, JavaScript, Git, and Docker, with experience building and deploying machine learning applications.
           </p>
 
           <div class="hero-tags">
@@ -89,6 +82,7 @@
             <span class="tag-badge">Python</span>
             <span class="tag-badge">Django</span>
             <span class="tag-badge">FastAPI</span>
+            <span class="tag-badge">React</span>
             <span class="tag-badge">JavaScript</span>
             <span class="tag-badge">SQL</span>
             <span class="tag-badge">Docker</span>
@@ -144,7 +138,7 @@
               <!-- Location badge stays attached to the lower edge of the photo. -->
               <div class="portrait-badge-bottom" style="justify-content:center; gap:0.5rem;">
                 <span class="status-dot"></span>
-                <span style="font-size:0.8rem; font-family:var(--font-mono); color:#f1f5f9;">Madurai • Open to Relocation</span>
+                <span style="font-size:0.8rem; font-family:var(--font-mono); color:var(--text-primary);">Madurai • Open to Relocation</span>
               </div>
             </div>
 
@@ -168,31 +162,28 @@
       
       <div class="section-header">
         <h2 class="section-title">About Me</h2>
-        <p class="section-desc">
-          Computer Science graduate and Python developer focused on building practical, reliable software.
-        </p>
       </div>
 
       <div class="about-two-col-grid">
         <!-- Full-width About & Education panel -->
         <div class="about-card-box">
-          <div style="display:flex; flex-direction:column; gap:0.9rem; font-size:0.95rem; color:#cbd5e1; line-height:1.65;">
+          <div class="about-bio-text">
             <p>
-              I am a Computer Science Engineering graduate focused on Python full-stack development. I build web applications with Python, Django, FastAPI, and Flask, use SQL to organize application data, and create responsive interfaces with HTML, CSS, and JavaScript. My project work also includes connecting machine-learning and OCR workflows to web services, and building desktop utilities with PyWebView.
+              I am a Computer Science Engineering graduate focused on Python full-stack development. I build web applications with Python, Django, FastAPI, and Flask, use SQL to organize application data, and create responsive interfaces with React, HTML, CSS, and JavaScript. My project work also includes connecting machine-learning and OCR workflows to web services, and building desktop utilities with PyWebView.
             </p>
             <p>
               I like to understand what needs to be built before I start. Then I break the work into smaller tasks, build it step by step, and test as I go. I keep my code readable, share progress with teammates, and use feedback to make practical improvements. My goal is to deliver software that works reliably and is easy to use.
             </p>
           </div>
 
-          <div class="about-highlights-strip" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:0.75rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--border-color);">
-            <div class="highlight-item" style="background:var(--bg-primary); border:1px solid var(--border-subtle); padding:0.6rem 0.85rem; border-radius:var(--radius-sm);">
-              <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--text-muted); display:block; text-transform:uppercase;">Primary Focus</span>
-              <strong style="color:var(--accent); font-size:0.85rem; font-weight:600;">Python Full Stack</strong>
+          <div class="about-highlights-strip">
+            <div class="highlight-item">
+              <span class="highlight-label">Primary Focus</span>
+              <strong class="highlight-value highlight-accent">Python Full Stack</strong>
             </div>
-            <div class="highlight-item" style="background:var(--bg-primary); border:1px solid var(--border-subtle); padding:0.6rem 0.85rem; border-radius:var(--radius-sm);">
-              <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--text-muted); display:block; text-transform:uppercase;">Degree</span>
-              <strong style="color:#fff; font-size:0.85rem; font-weight:600;">B.E. CSE (CGPA: 7.69)</strong>
+            <div class="highlight-item">
+              <span class="highlight-label">Degree</span>
+              <strong class="highlight-value">B.E. CSE (CGPA: 7.69)</strong>
             </div>
           </div>
 
@@ -215,33 +206,33 @@
             <p>Pandian Saraswathi Yadav Engineering College, Sivagangai</p>
             <div class="edu-feature-bottom">
               <span>Anna University</span>
-              <strong><small>CGPA</small> 7.69 <i>/ 10.0</i></strong>
+              <strong><small>CGPA</small><span>7.69</span><i>/ 10.0</i></strong>
             </div>
           </article>
 
           <article class="edu-featured">
             <div class="edu-feature-top">
-              <span class="edu-level">HIGHER SECONDARY · CLASS XII</span>
+              <span class="edu-level">HIGHER SECONDARY</span>
               <time datetime="2021">2021 – 2022</time>
             </div>
             <h3>HSC — State Board of Tamil Nadu</h3>
             <p>Annamalaiyaar Matric. Hr. Sec. School, Madurai</p>
             <div class="edu-feature-bottom">
               <span>Higher Secondary</span>
-              <strong><small>SCORE</small> 84<em>%</em></strong>
+              <strong><small>SCORE</small><span>84</span><em>%</em></strong>
             </div>
           </article>
 
           <article class="edu-featured">
             <div class="edu-feature-top">
-              <span class="edu-level">SECONDARY · CLASS X</span>
+              <span class="edu-level">SECONDARY</span>
               <time datetime="2019">2019 – 2020</time>
             </div>
             <h3>SSLC — State Board of Tamil Nadu</h3>
             <p>C.E.O.A Matric. Hr. Sec. School, Madurai</p>
             <div class="edu-feature-bottom">
               <span>Secondary School</span>
-              <strong><small>SCORE</small> 91.2<em>%</em></strong>
+              <strong><small>SCORE</small><span>91.2</span><em>%</em></strong>
             </div>
           </article>
           </div>
@@ -373,6 +364,17 @@
                   </div>
                 </div>
                 <span class="skill-level-badge" style="color:#818cf8; border-color:rgba(129,140,248,0.3); background:rgba(129,140,248,0.1);">Scripting</span>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-name-group">
+                  <span class="skill-bullet" style="background:#818cf8;"></span>
+                  <div>
+                    <span class="skill-name">React</span>
+                    <span class="skill-focus">Reusable components, props, and state</span>
+                  </div>
+                </div>
+                <span class="skill-level-badge" style="color:#818cf8; border-color:rgba(129,140,248,0.3); background:rgba(129,140,248,0.1);">Library</span>
               </div>
             </div>
           </div>
@@ -514,7 +516,7 @@
       <div class="section-header">
         <h2 class="section-title">Featured Projects</h2>
         <p class="section-desc">
-          Web and desktop apps built with Python, machine learning, OCR, and modern frontend technologies.
+          Production-ready web applications, machine learning systems, and desktop utilities built with Python and modern web technologies.
         </p>
       </div>
 
@@ -531,9 +533,9 @@
     <div class="container">
       
       <div class="section-header">
-        <h2 class="section-title">Work Experience</h2>
+        <h2 class="section-title">Internship Experience</h2>
         <p class="section-desc">
-          Professional internship background combining data analysis, structured reporting, and full-stack software development.
+          Internship experience across data analysis, data science, and full-stack software development.
         </p>
       </div>
 
@@ -549,30 +551,38 @@
             <div class="timeline-header">
               <div>
                 <h3 class="timeline-role">Data Analyst Intern</h3>
-                <div class="timeline-company">Sun Plastics • Tamil Nadu, India</div>
+                <div class="timeline-company">Sun Plastics • Madurai</div>
               </div>
-              <span class="timeline-date-badge">07/2025 – 10/2025</span>
+              <span class="timeline-date-badge">Jul 2025 – Oct 2025</span>
             </div>
 
-            <p style="font-size:0.9rem; color:#cbd5e1; line-height:1.6;">
+            <p class="timeline-summary">
               Analyzed business datasets, maintained transactional records in Tally ERP, and prepared daily and monthly operational reports.
             </p>
 
             <div class="responsibilities-grid">
               <div class="resp-item">
-                <span class="resp-check">✓</span>
+                <span class="resp-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
                 <span>Analyzed and maintained business data using Microsoft Excel, including data cleaning, sorting, filtering, formulas, and pivot tables.</span>
               </div>
               <div class="resp-item">
-                <span class="resp-check">✓</span>
+                <span class="resp-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
                 <span>Managed and maintained Tally ERP records, including sales, purchases, expenses, invoices, and financial transactions with accurate data entry.</span>
               </div>
               <div class="resp-item">
-                <span class="resp-check">✓</span>
+                <span class="resp-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
                 <span>Prepared daily and monthly business reports and analyzed data to identify discrepancies, trends, patterns, and key business insights.</span>
               </div>
               <div class="resp-item">
-                <span class="resp-check">✓</span>
+                <span class="resp-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
                 <span>Maintained accurate records and performed data validation and reconciliation to ensure consistency between Excel reports and Tally ERP data.</span>
               </div>
             </div>
@@ -589,6 +599,59 @@
           </div>
         </div>
 
+        <!-- Phoenix Softech Data Science Internship -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <div class="timeline-dot-inner"></div>
+          </div>
+
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Data Science Intern</h3>
+                <div class="timeline-company">Phoenix Softech • Madurai</div>
+              </div>
+              <span class="timeline-date-badge">Feb 2025 – Mar 2025</span>
+            </div>
+
+            <p class="timeline-summary">
+              Underwent professional internship training focused on data manipulation, dataset preprocessing, and applied analytical problem-solving.
+            </p>
+
+            <div class="responsibilities-grid">
+              <div class="resp-item">
+                <span class="resp-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
+                <span>Applied Python, Pandas, and NumPy for data manipulation, processing, and analysis during Data Science internship training.</span>
+              </div>
+              <div class="resp-item">
+                <span class="resp-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
+                <span>Performed data cleaning and preprocessing to improve data quality and ensure accurate analysis.</span>
+              </div>
+              <div class="resp-item">
+                <span class="resp-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
+                <span>Utilized data science tools and analytical techniques to identify patterns, interpret datasets, and develop data-driven problem-solving skills.</span>
+              </div>
+            </div>
+
+            <div class="experience-skills">
+              <span class="experience-skills-label">Skills applied</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Data Analysis</span>
+              <span class="tech-tag">Data Cleaning</span>
+              <span class="tech-tag">Data Preprocessing</span>
+              <span class="tech-tag">Data Manipulation</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -596,9 +659,18 @@
       <div class="container site-footer-inner">
         <p class="site-footer-copy">© <span id="footerYear">2026</span> Arivukkarasu K</p>
         <div class="site-footer-contact" aria-label="Contact links">
-          <a href="mailto:arivukkarasu15@gmail.com">arivukkarasu15@gmail.com</a>
-          <a href="https://linkedin.com/in/arivukkarasu-star" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/arivukkarasu15-star" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:arivukkarasu15@gmail.com">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span>arivukkarasu15@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/arivukkarasu-star" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/arivukkarasu15-star" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.4-6-2.8M15 21v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.7a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.2-.4-3.8 1.4a13 13 0 0 0-6.9 0C5.5.2 4.3.6 4.3.6a4.8 4.8 0 0 0-.1 3.6 5.2 5.2 0 0 0-1.4 3.6c0 5.2 3.2 6.4 6.2 6.7a3.4 3.4 0 0 0-.9 2.6V21"/></svg>
+            <span>GitHub</span>
+          </a>
         </div>
       </div>
     </footer>
@@ -624,12 +696,12 @@
         <p id="modalProblem"></p>
       </div>
 
-      <div class="modal-section">
+      <div class="modal-section modal-overview">
         <h3>Overview</h3>
         <p id="modalDesc"></p>
       </div>
 
-      <div class="modal-section">
+      <div class="modal-section modal-implementation">
         <h3>Implementation Highlights</h3>
         <div id="modalFeatures" class="modal-features"></div>
       </div>
@@ -640,11 +712,11 @@
       </div>
 
       <div class="modal-actions">
-        <a id="modalDemoBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:0.85rem; padding:0.6rem 1.25rem;">
+        <a id="modalDemoBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary">
           <span>Open Live Demo</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6"/></svg>
         </a>
-        <a id="modalRepoBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="font-size:0.85rem; padding:0.6rem 1.25rem;">
+        <a id="modalRepoBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
           <span>View GitHub Repository</span>
         </a>
@@ -654,7 +726,7 @@
 
 
   <!-- Scripts -->
-  <script src="js/data.js?v=notebook-project-mobile-details-20261024"></script>
-  <script src="js/main.js?v=notebook-project-mobile-details-20261024"></script>
+  <script src="js/data.js?v=project-points-content-20261103"></script>
+  <script src="js/main.js?v=font-scale-chevron-20261110"></script>
 </body>
 </html>
