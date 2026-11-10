@@ -83,15 +83,15 @@ const portfolioData = {
     {
       id: "fake-news-detection-using-ml",
       title: "Fake News Detection Using Machine Learning",
-      subtitle: "Bilingual (English/Tamil) ML & OCR news verification web application",
+      subtitle: "Bilingual news verification for English and Tamil text and images",
       category: "AI & Machine Learning",
       badge: "Featured Project",
       description: "A bilingual (English/Tamil) fake news detection web application built with Python and Flask. Integrates machine learning classification with live news source cross-checking, an AI fallback mechanism for ambiguous predictions, and Tesseract OCR to classify news directly from uploaded article images.",
       problemSolved: "Assists in identifying potential misinformation in multilingual digital news by extracting text from article screenshots and applying machine learning classification.",
       techStack: ["Python", "Flask", "scikit-learn", "Pandas", "Tesseract OCR", "Docker"],
       features: [
-        "Classifies English and Tamil news text to help flag potentially misleading articles",
-        "Extracts article text from uploaded images with Tesseract OCR, without manual transcription",
+        "Checks English and Tamil news text with machine learning to flag suspicious stories",
+        "Reads article images with Tesseract OCR so users can check stories without retyping",
         "Uses an AI fallback when predictions are uncertain and checks live sources for context",
         "Live news source cross-checking for verification",
         "Containerized with Docker for deployment"
@@ -108,15 +108,15 @@ const portfolioData = {
     {
       id: "expense-tracker",
       title: "Expense Tracker",
-      subtitle: "Desktop personal expenditure management and visual analytics application",
+      subtitle: "A desktop expense manager with category insights and interactive charts",
       category: "Python Desktop App",
       badge: "Desktop Application",
       description: "A desktop expense tracker application built with Python, PyWebView, and Chart.js for logging, categorizing, and visualizing personal expenditures and budget trends.",
       problemSolved: "Provides an offline-capable tool to record daily expenses, categorize spending habits, and view financial summary charts.",
       techStack: ["Python", "PyWebView", "JavaScript", "HTML5", "CSS3"],
       features: [
-        "Visualizes spending patterns and category totals with interactive Chart.js graphs",
-        "Runs as a desktop app through PyWebView, combining Python with HTML, CSS, and JavaScript",
+        "Uses interactive charts to show category totals and changing spending patterns",
+        "Groups expenses by category and date to make monthly trends easy to compare",
         "Groups expenses by category and filters records by date to review spending over time",
         "Calculation of category totals and monthly summaries"
       ],
@@ -132,15 +132,15 @@ const portfolioData = {
     {
       id: "to-do-app",
       title: "To-Do Task Management App",
-      subtitle: "Offline desktop task manager and workflow tracker",
+      subtitle: "An offline task manager for organizing work and tracking progress",
       category: "Python Web App",
       badge: "Desktop Application",
       description: "An offline task manager desktop application built with Python and Flask to organize daily tasks, manage deliverables, and update task statuses.",
       problemSolved: "Offers a lightweight offline task management tool to organize daily deliverables without requiring internet connectivity.",
       techStack: ["Python", "Flask", "HTML5", "CSS3", "JavaScript"],
       features: [
-        "Moves tasks through Pending, In Progress, and Completed states as work progresses",
-        "Uses a Flask backend to manage task records and save status changes locally",
+        "Tracks work from Pending to In Progress and Completed with clear status updates",
+        "Saves tasks locally through Flask so progress remains available offline",
         "Provides a responsive task interface built with HTML, CSS, and vanilla JavaScript",
         "Runs locally with zero external network dependencies"
       ],
@@ -156,15 +156,15 @@ const portfolioData = {
     {
       id: "notebook-app",
       title: "Notebook",
-      subtitle: "A lightweight notes app for capturing and organizing ideas",
+      subtitle: "A simple notes workspace for creating, finding, and organizing ideas",
       category: "Notes App",
       badge: "Web & Desktop App",
       description: "A responsive notes app built with HTML, CSS, and JavaScript. It runs as a website on Netlify and can also be opened as a desktop app with a Python PyWebView wrapper.",
       problemSolved: "Makes it easy to create, find, and manage personal notes from a simple web or desktop interface.",
       techStack: ["HTML5", "CSS3", "JavaScript", "Python", "PyWebView"],
       features: [
-        "Create, edit, and delete notes in one simple, lightweight workspace",
-        "Search note titles and content to find saved information more quickly",
+        "Create and organize personal notes in a simple workspace for everyday ideas",
+        "Search note titles and content to find saved information without scrolling",
         "Switch between light and dark themes in a responsive app for different screens",
         "Responsive layout for different screen sizes",
         "Optional desktop launcher using Python and PyWebView"

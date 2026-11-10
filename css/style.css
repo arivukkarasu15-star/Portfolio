@@ -2066,7 +2066,8 @@ input:focus, textarea:focus {
 }
 
 #about .about-card-box > div:first-child p {
-  text-align: left;
+  text-align: justify;
+  text-justify: inter-word;
   hyphens: none;
   word-break: normal;
   overflow-wrap: normal;
@@ -2786,7 +2787,7 @@ input:focus, textarea:focus {
 #about .edu-feature-bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 0.75rem;
 }
 
@@ -5180,7 +5181,7 @@ body {
 #skills .skills-list {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: repeat(4, 82px);
+  grid-template-rows: repeat(4, minmax(86px, auto));
   gap: 0.65rem;
   align-content: stretch;
 }
@@ -5188,12 +5189,13 @@ body {
 /* Skill Row */
 #skills .skill-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto;
   align-content: center;
-  gap: 0.28rem 0.65rem;
-  height: 100%;
-  min-height: 0;
+  justify-items: start;
+  gap: 0.4rem;
+  height: auto;
+  min-height: 86px;
   min-width: 0;
   padding: 0.8rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -5220,7 +5222,8 @@ body {
 #skills .skill-name {
   grid-column: 1;
   grid-row: 1;
-  align-self: center;
+  align-self: start;
+  max-width: 100%;
   font-size: 1.05rem !important;
   font-weight: 600;
   color: #f8fafc;
@@ -5229,43 +5232,18 @@ body {
 }
 
 #skills .skill-focus {
-  grid-column: 1 / -1;
+  grid-column: 1;
   grid-row: 2;
   margin: 0;
   font-size: 0.86rem !important;
   color: #94a3b8 !important;
   line-height: 1.42;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
 }
 
 /* Modern Pill Badge */
-#skills .skill-level-badge {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: center;
-  justify-self: end;
-  max-width: 100%;
-  padding: 0.22rem 0.62rem !important;
-  border-radius: 9999px !important;
-  font-family: var(--font-mono) !important;
-  font-size: 0.78rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.025em;
-  line-height: 1.25;
-  white-space: nowrap;
-  color: var(--cat-color) !important;
-  background: rgba(var(--cat-rgb), 0.12) !important;
-  border: 1px solid rgba(var(--cat-rgb), 0.32) !important;
-  transition: all 0.2s ease;
-}
-
-#skills .skill-row:hover .skill-level-badge {
-  background: rgba(var(--cat-rgb), 0.2) !important;
-  border-color: rgba(var(--cat-rgb), 0.5) !important;
-}
-
 /* Responsive Breakpoints (Preserves exact layout across screens) */
 @media (max-width: 1200px) {
   #skills .skills-grid {
@@ -5273,7 +5251,7 @@ body {
     gap: 1.25rem;
   }
   #skills .skills-list {
-    grid-template-rows: repeat(4, 80px);
+    grid-template-rows: repeat(4, minmax(86px, auto));
   }
 }
 
@@ -5283,13 +5261,11 @@ body {
     gap: 1.1rem;
   }
   #skills .skills-list {
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(4, minmax(0, auto));
   }
   #skills .skill-row {
     padding: 0.85rem 1rem;
-  }
-  #skills .skill-focus {
-    white-space: normal;
+    min-height: 86px;
   }
 }
 
@@ -6192,7 +6168,6 @@ html:not([data-theme="light"]) #projects .pcard-footer {
 .hero-intro,
 #about .about-bio-text p {
   text-align: justify;
-  text-align-last: left;
   text-justify: inter-word;
 }
 
@@ -6252,46 +6227,47 @@ html:not([data-theme="light"]) #projects .pcard-footer {
   }
 }
 
-/* Subdue project color accents so content remains the visual focus. */
+/* Bring project accents in line with the brighter category colors in Skills. */
 #projects .pcard-accent-beam {
-  opacity: 0.3;
-  box-shadow: none;
+  opacity: 0.72;
+  box-shadow: 0 0 8px rgba(var(--p-rgb, 56, 189, 248), 0.2);
 }
 
 #projects .pcard-radial-glow {
-  opacity: 0.08;
-}
-
-#projects .pcard:hover .pcard-radial-glow {
   opacity: 0.12;
 }
 
+#projects .pcard:hover .pcard-radial-glow {
+  opacity: 0.24;
+}
+
 #projects .pcard:hover {
-  border-color: rgba(var(--p-rgb, 125, 164, 184), 0.28);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.38);
   box-shadow: 0 16px 34px -12px rgba(0, 0, 0, 0.72),
+              0 0 24px -6px rgba(var(--p-rgb, 56, 189, 248), 0.14),
               inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 #projects .pcard-badge {
-  background: rgba(var(--p-rgb, 125, 164, 184), 0.07);
-  border-color: rgba(var(--p-rgb, 125, 164, 184), 0.22);
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.1);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.29);
 }
 
 #projects .highlight-icon,
 #projects .highlight-check {
-  background: rgba(var(--p-rgb, 125, 164, 184), 0.07);
-  border-color: rgba(var(--p-rgb, 125, 164, 184), 0.2);
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.1);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.29);
 }
 
 #projects .pcard:hover .highlight-icon,
 #projects .pcard:hover .highlight-check {
-  background: rgba(var(--p-rgb, 125, 164, 184), 0.11);
-  border-color: rgba(var(--p-rgb, 125, 164, 184), 0.28);
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.16);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.42);
 }
 
 #projects .pcard-tags .tech-tag:hover {
-  border-color: rgba(var(--p-rgb, 125, 164, 184), 0.28);
-  background: rgba(var(--p-rgb, 125, 164, 184), 0.07);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.36);
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.1);
 }
 
 #projects .pcard-btn-live {
@@ -6307,4 +6283,671 @@ html:not([data-theme="light"]) #projects .pcard-footer {
   border-color: rgba(56, 189, 248, 0.42);
   color: #d8f4ff;
   box-shadow: none;
+}
+
+/* Projects: concise highlights, readable copy, and clearer actions. */
+#projects .section-header .section-title {
+  display: block;
+}
+
+#projects .section-header {
+  margin-bottom: clamp(1rem, 2vh, 1.5rem);
+}
+
+#projects .pcard-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(2.7em, auto) auto;
+  gap: 0.45rem;
+}
+
+#projects .pcard-title {
+  font-size: clamp(1.2rem, 1.3vw, 1.32rem) !important;
+  line-height: 1.38;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 0;
+  padding: 0.28rem 0.58rem;
+  border-left: 3px solid rgba(var(--p-rgb, 56, 189, 248), 0.66);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, rgba(var(--p-rgb, 56, 189, 248), 0.14), rgba(var(--p-rgb, 56, 189, 248), 0.045));
+}
+
+#projects .pcard-desc {
+  font-size: 1rem !important;
+  line-height: 1.58;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#projects .pcard-highlights {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 0 0 auto;
+  gap: 0.5rem;
+}
+
+#projects .pcard-highlights li {
+  min-height: 3.2em;
+  font-size: 1rem !important;
+  line-height: 1.55;
+  text-align: left;
+}
+
+#projects .highlight-text {
+  min-width: 0;
+  text-align: left;
+}
+
+#projects .pcard-tags {
+  min-height: 0;
+  padding-top: 0.25rem;
+}
+
+#projects .pcard-tags .tech-tag {
+  min-height: 30px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.86rem !important;
+  font-weight: 500;
+  background: #131e2d;
+  border-color: #2a3a4e;
+  color: #d5dfeb;
+}
+
+#projects .pcard-footer {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  padding: 0.78rem 0.9rem;
+}
+
+#projects .pcard-btn-detail,
+#projects .pcard-btn-live,
+#projects .pcard-btn-gh {
+  min-height: 44px;
+  padding-inline: 0.3rem;
+  font-size: 0.88rem !important;
+  font-weight: 650;
+}
+
+@media (max-width: 760px) {
+  #projects .pcard-footer > .pcard-btn-detail,
+  #projects .pcard-footer > .pcard-btn-live,
+  #projects .pcard-footer > .pcard-btn-gh {
+    min-height: 44px;
+    padding-inline: 0.25rem;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #projects .pcard-footer > .pcard-btn-detail,
+  #projects .pcard-footer > .pcard-btn-live,
+  #projects .pcard-footer > .pcard-btn-gh {
+    font-size: 0.72rem !important;
+  }
+}
+
+/* Projects section redesign: clear hierarchy and lighter, scan-friendly cards. */
+#projects .section-header {
+  margin-bottom: clamp(1.25rem, 2.4vh, 1.8rem);
+}
+
+#projects .section-title {
+  margin-bottom: 0.55rem;
+  font-size: clamp(2rem, 3vw, 2.55rem) !important;
+  letter-spacing: -0.035em;
+}
+
+#projects .section-desc {
+  max-width: 100%;
+  font-size: 1rem !important;
+  line-height: 1.55;
+}
+
+#projects .projects-grid {
+  gap: clamp(0.9rem, 1.25vw, 1.2rem);
+}
+
+#projects .pcard {
+  border-radius: 16px;
+  background: #0d1420;
+  border-color: #222e3f;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+#projects .pcard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.4);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+#projects .pcard-accent-beam {
+  height: 2px;
+  opacity: 0.8;
+}
+
+#projects .pcard-body {
+  gap: 0.95rem;
+  padding: clamp(1.05rem, 1.35vw, 1.3rem);
+}
+
+#projects .pcard-heading {
+  grid-template-rows: minmax(2.7em, auto) auto;
+  gap: 0.38rem;
+}
+
+#projects .pcard-title {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0 0 0.62rem;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: #f8fafc;
+  font-size: clamp(1.12rem, 1.22vw, 1.28rem) !important;
+  font-weight: 750;
+  line-height: 1.36;
+  letter-spacing: -0.02em;
+}
+
+#projects .pcard-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.16rem;
+  width: 2rem;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.85);
+}
+
+#projects .pcard-desc {
+  min-height: 3.05em;
+  margin: 0;
+  color: #a9b7c9;
+  font-size: 0.98rem !important;
+  line-height: 1.52;
+  text-align: left;
+}
+
+#projects .pcard-highlights {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(4.2rem, auto));
+  gap: 0.45rem;
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+#projects .pcard-highlights li {
+  min-height: 4.2rem;
+  align-items: flex-start;
+  gap: 0.62rem;
+  padding: 0.58rem 0.62rem;
+  border: 1px solid #1d2938;
+  border-radius: 10px;
+  background: #0a111b;
+  color: #d7e0ea;
+  font-size: 0.94rem !important;
+  line-height: 1.5;
+  text-align: left;
+}
+
+#projects .highlight-icon,
+#projects .highlight-check {
+  width: 19px;
+  height: 19px;
+  min-width: 19px;
+  margin-top: 0.08rem;
+  border-radius: 6px;
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.1);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.23);
+}
+
+#projects .pcard-tags {
+  min-height: 0;
+  gap: 0.42rem;
+  padding-top: 0.15rem;
+  margin-top: auto;
+}
+
+#projects .pcard-tags::before {
+  content: "TECH STACK";
+  flex: 0 0 100%;
+  margin-bottom: 0.08rem;
+  color: #8392a7;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+#projects .pcard-tags .tech-tag {
+  min-height: 29px;
+  padding: 0.27rem 0.62rem;
+  border-radius: 7px;
+  background: #121b28;
+  border-color: #29384a;
+  color: #c9d5e3;
+  font-size: 0.78rem !important;
+}
+
+#projects .pcard-footer {
+  gap: 0.48rem;
+  padding: 0.72rem 0.78rem;
+  border-top-color: #1d2938;
+  background: #090f18;
+}
+
+#projects .pcard-btn-detail,
+#projects .pcard-btn-live,
+#projects .pcard-btn-gh {
+  min-height: 42px;
+  border-radius: 9px;
+  font-size: 0.82rem !important;
+  font-weight: 650;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+#projects .pcard-btn-detail,
+#projects .pcard-btn-gh {
+  color: #c9d5e3;
+  background: #111925;
+  border-color: #2b3747;
+}
+
+#projects .pcard-btn-live {
+  color: #c6edff;
+  background: #103047;
+  border-color: #24536d;
+}
+
+#projects .pcard-btn-detail:hover,
+#projects .pcard-btn-gh:hover,
+#projects .pcard-btn-live:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  #projects .pcard-body {
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  #projects .pcard-title {
+    font-size: 1.2rem !important;
+  }
+
+  #projects .pcard-desc {
+    min-height: 0;
+  }
+
+  #projects .pcard-highlights {
+    grid-template-rows: repeat(2, minmax(0, auto));
+  }
+
+  #projects .pcard-highlights li {
+    min-height: 0;
+  }
+
+  #projects .pcard-footer > .pcard-btn-detail,
+  #projects .pcard-footer > .pcard-btn-live,
+  #projects .pcard-footer > .pcard-btn-gh {
+    min-height: 42px;
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: 760px) {
+  #projects .pcard-footer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+
+  #projects .pcard-footer > .pcard-btn-detail {
+    grid-column: auto;
+  }
+
+  #projects .pcard-footer > .pcard-btn-detail,
+  #projects .pcard-footer > .pcard-btn-live,
+  #projects .pcard-footer > .pcard-btn-gh {
+    min-width: 0;
+    padding-inline: 0.2rem;
+    font-size: 0.72rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #projects .pcard-footer {
+    gap: 0.25rem;
+    padding-inline: 0.55rem;
+  }
+
+  #projects .pcard-footer > .pcard-btn-detail,
+  #projects .pcard-footer > .pcard-btn-live,
+  #projects .pcard-footer > .pcard-btn-gh {
+    font-size: 0.65rem !important;
+  }
+}
+
+/* Project cards: quieter surfaces, clearer feature lists, and even controls. */
+#projects .pcard {
+  background: #0d1420;
+  border-color: #202b3a;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+#projects .pcard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.34);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+}
+
+#projects .pcard-accent-beam {
+  height: 2px;
+  opacity: 0.72;
+  box-shadow: none;
+}
+
+#projects .pcard:hover .pcard-accent-beam {
+  height: 2px;
+  opacity: 0.9;
+}
+
+#projects .pcard-radial-glow {
+  display: none;
+}
+
+#projects .pcard-body {
+  gap: 0.85rem;
+}
+
+#projects .pcard-badge {
+  padding: 0.24rem 0.62rem;
+  font-size: 0.74rem;
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.08);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.24);
+}
+
+#projects .pcard-badge-meta {
+  font-size: 0.72rem;
+  color: #8998ad;
+}
+
+#projects .pcard-title {
+  font-size: clamp(1.12rem, 1.18vw, 1.25rem) !important;
+  line-height: 1.35;
+}
+
+#projects .pcard-desc {
+  color: #a7b5c8;
+  line-height: 1.55;
+}
+
+#projects .pcard-highlights {
+  gap: 0.68rem;
+}
+
+#projects .pcard-highlights li {
+  gap: 0.58rem;
+  color: #d7dfeb;
+  line-height: 1.48;
+}
+
+#projects .highlight-icon,
+#projects .highlight-check {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 0.16rem;
+  border-radius: 50%;
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.1);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.24);
+}
+
+#projects .highlight-icon svg,
+#projects .highlight-check svg {
+  width: 10px;
+  height: 10px;
+}
+
+#projects .pcard:hover .highlight-icon,
+#projects .pcard:hover .highlight-check {
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.14);
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.32);
+}
+
+#projects .pcard-tags .tech-tag {
+  padding: 0.24rem 0.55rem;
+  border-radius: 999px;
+  color: #c2cedd;
+  background: #121b29;
+  border-color: #263346;
+}
+
+#projects .pcard-footer {
+  gap: 0.5rem;
+  padding: 0.72rem 0.85rem;
+  background: #0a101a;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+#projects .pcard-btn-detail,
+#projects .pcard-btn-live,
+#projects .pcard-btn-gh {
+  min-height: 40px;
+  border-radius: 8px;
+}
+
+#projects .pcard-btn-live {
+  color: #b8eaff;
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.28);
+  box-shadow: none;
+}
+
+#projects .pcard-btn-live:hover,
+#projects .pcard-btn-live:focus-visible {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: rgba(56, 189, 248, 0.42);
+  color: #d8f4ff;
+  box-shadow: none;
+}
+
+/* Final project heading treatment: a clear, category-tinted title band. */
+#projects .pcard-title--project {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 2.8em;
+  padding: 0.46rem 0.72rem;
+  border: 1px solid rgba(var(--p-rgb, 56, 189, 248), 0.16);
+  border-left: 3px solid var(--p-color, #38bdf8);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(100deg, rgba(var(--p-rgb, 56, 189, 248), 0.12), rgba(var(--p-rgb, 56, 189, 248), 0.035) 72%, transparent);
+  color: #f4f7fb;
+}
+
+#projects .pcard-title--project::after {
+  content: none;
+}
+
+/* Keep the technology list compact, readable, and visually grouped. */
+#projects .pcard-tags {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  gap: 0.42rem;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 1px solid #1d2938;
+}
+
+#projects .pcard-tags::before {
+  content: "TECH STACK";
+  flex: 0 0 100%;
+  margin: 0 0 0.08rem;
+  padding-bottom: 0.42rem;
+  border-bottom: 1px solid #182333;
+  color: #91a2b8;
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+#projects .pcard-tags .tech-tag {
+  min-height: 28px;
+  padding: 0.24rem 0.62rem;
+  border: 1px solid rgba(var(--p-rgb, 56, 189, 248), 0.2);
+  border-radius: 999px;
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.055);
+  color: #cbd6e4;
+  font-size: 0.78rem !important;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+#projects .pcard-tags .tech-tag:hover {
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.38);
+  background: rgba(var(--p-rgb, 56, 189, 248), 0.1);
+  color: #f3f7fb;
+}
+
+@media (max-width: 560px) {
+  #projects .pcard-tags {
+    gap: 0.38rem;
+    padding-top: 0.7rem;
+  }
+
+  #projects .pcard-tags .tech-tag {
+    min-height: 30px;
+    padding-inline: 0.65rem;
+  }
+}
+
+/* Group each project's tools into a deliberate, easy-to-scan panel. */
+#projects .pcard-tags {
+  width: 100%;
+  box-sizing: border-box;
+  gap: 0.42rem;
+  margin-top: auto;
+  padding: 0.72rem;
+  border: 1px solid rgba(var(--p-rgb, 56, 189, 248), 0.14);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(var(--p-rgb, 56, 189, 248), 0.055), rgba(10, 17, 27, 0.82) 58%);
+}
+
+#projects .pcard-tags::before {
+  content: "BUILT WITH";
+  margin-bottom: 0.12rem;
+  padding-bottom: 0;
+  border-bottom: 0;
+  color: rgba(var(--p-rgb, 56, 189, 248), 0.9);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
+#projects .pcard-tags .tech-tag {
+  min-height: 28px;
+  border-color: rgba(var(--p-rgb, 56, 189, 248), 0.2);
+  background: #111a27;
+  color: #d0dae7;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+@media (max-width: 560px) {
+  #projects .pcard-tags {
+    padding: 0.7rem;
+  }
+}
+
+/* Match internship skill chips to the grouped project tech-stack panels. */
+#experience .timeline-item:nth-child(1) .experience-skills {
+  --exp-accent: 56, 189, 248;
+}
+
+#experience .timeline-item:nth-child(2) .experience-skills {
+  --exp-accent: 45, 212, 191;
+}
+
+#experience .experience-skills {
+  gap: 0.42rem;
+  margin-top: auto;
+  padding: 0.72rem;
+  border: 1px solid rgba(var(--exp-accent, 56, 189, 248), 0.16);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(var(--exp-accent, 56, 189, 248), 0.055), rgba(10, 17, 27, 0.82) 58%);
+}
+
+#experience .experience-skills-label {
+  flex: 0 0 100%;
+  margin: 0 0 0.12rem;
+  padding-bottom: 0.42rem;
+  border-bottom: 1px solid rgba(var(--exp-accent, 56, 189, 248), 0.12);
+  color: rgba(var(--exp-accent, 56, 189, 248), 0.9);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+#experience .experience-skills .tech-tag {
+  min-height: 28px;
+  padding: 0.24rem 0.62rem;
+  border: 1px solid rgba(var(--exp-accent, 56, 189, 248), 0.2);
+  border-radius: 999px;
+  background: #111a27;
+  color: #d0dae7;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+#experience .experience-skills .tech-tag:hover {
+  border-color: rgba(var(--exp-accent, 56, 189, 248), 0.38);
+  background: rgba(var(--exp-accent, 56, 189, 248), 0.1);
+  color: #f3f7fb;
+  transform: none;
+}
+
+/* Make education results easier to scan and identify the awarding university. */
+#about .edu-featured h3 .edu-affiliation {
+  color: #9fb4ca;
+  font-size: 0.82em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+#about .edu-feature-bottom > strong {
+  gap: 0.36rem;
+  padding: 0.46rem 0.82rem;
+  font-size: 0.88rem;
+}
+
+#about .edu-feature-bottom > strong > span {
+  font-size: 1.62rem;
+}
+
+#about .edu-feature-bottom > strong small {
+  font-size: 0.68rem;
+}
+
+#about .edu-feature-bottom > strong i,
+#about .edu-feature-bottom > strong em {
+  font-size: 0.74rem;
+}
+
+@media (max-width: 600px) {
+  #about .edu-feature-bottom > strong > span {
+    font-size: 1.52rem;
+  }
+}
+
+html[data-theme="light"] #about .edu-featured h3 .edu-affiliation {
+  color: #52647a;
 }

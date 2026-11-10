@@ -117,29 +117,29 @@ function initNavbar() {
    ------------------------------------------------------------------------- */
 const projectCategoryMap = {
   'AI & Machine Learning': {
-    color: '#9b8bbb',
-    rgb: '155, 139, 187',
+    color: '#9185cf',
+    rgb: '145, 133, 207',
     label: 'AI & ML',
     badge: 'ML & OCR App',
     icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z"/><path d="M18 10a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4v-1a4 4 0 0 1 4-4z"/><path d="M6 10a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4v-1a4 4 0 0 1 4-4z"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>`
   },
   'Python Desktop App': {
-    color: '#c5a15b',
-    rgb: '197, 161, 91',
+    color: '#d6ad5e',
+    rgb: '214, 173, 94',
     label: 'Desktop App',
     badge: 'PyWebView • Chart.js',
     icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="m7 10 3 3 7-7"/></svg>`
   },
   'Python Web App': {
-    color: '#79a995',
-    rgb: '121, 169, 149',
+    color: '#67b392',
+    rgb: '103, 179, 146',
     label: 'Web App',
     badge: 'Flask Task Manager',
     icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`
   },
   'Notes App': {
-    color: '#7da4b8',
-    rgb: '125, 164, 184',
+    color: '#69accb',
+    rgb: '105, 172, 203',
     label: 'Notes App',
     badge: 'Web & Desktop App',
     icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`
@@ -153,6 +153,9 @@ function initProjects() {
 
   if (projectsGrid) {
     projectsGrid.innerHTML = portfolioData.projects.map((project) => {
+      const cardTitle = project.id === 'fake-news-detection-using-ml'
+        ? 'Fake News Detection Using ML'
+        : project.title;
       const cat = projectCategoryMap[project.category] || {
         color: '#38bdf8',
         rgb: '56, 189, 248',
@@ -167,21 +170,13 @@ function initProjects() {
           <div class="pcard-radial-glow"></div>
 
           <div class="pcard-body">
-            <div class="pcard-top">
-              <div class="pcard-badge">
-                <span class="pcard-badge-icon">${cat.icon}</span>
-                <span>${cat.label}</span>
-              </div>
-              <span class="pcard-badge-meta">${cat.badge}</span>
-            </div>
-
             <div class="pcard-heading">
-              <h3 class="pcard-title">${project.title}</h3>
+              <h3 class="pcard-title pcard-title--project">${cardTitle}</h3>
               <p class="pcard-desc">${project.subtitle}</p>
             </div>
 
             <ul class="pcard-highlights" aria-label="Key features of ${project.title}">
-              ${project.features.slice(0, 3).map(feature => `
+              ${project.features.slice(0, 2).map(feature => `
                 <li>
                   <span class="highlight-icon" aria-hidden="true">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
