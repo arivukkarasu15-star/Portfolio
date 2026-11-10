@@ -6150,3 +6150,156 @@ body {
     font-size: 0.9rem !important;
   }
 }
+
+/* Crisp, solid surfaces across desktop and mobile; remove all frosted-glass blur. */
+*,
+*::before,
+*::after {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Keep the project dialog crisp while softening distracting page content behind it. */
+#projectModal.modal-backdrop {
+  backdrop-filter: blur(7px) !important;
+  -webkit-backdrop-filter: blur(7px) !important;
+}
+
+html:not([data-theme="light"]) .navbar,
+html:not([data-theme="light"]) .navbar.scrolled {
+  background: #090a0f;
+}
+
+html:not([data-theme="light"]) .mobile-menu,
+html:not([data-theme="light"]) .portrait-badge-top,
+html:not([data-theme="light"]) .portrait-badge-bottom {
+  background: #0e111a;
+}
+
+html:not([data-theme="light"]) #about .about-card-box {
+  background: linear-gradient(145deg, #111827, #0f172a);
+}
+
+html:not([data-theme="light"]) #experience .timeline-card,
+html:not([data-theme="light"]) #skills .skill-category-card,
+html:not([data-theme="light"]) #projects .pcard {
+  background: linear-gradient(160deg, #12192a, #0a0e18);
+}
+
+html:not([data-theme="light"]) #projects .pcard-footer {
+  background: #080c16;
+}
+
+.hero-intro,
+#about .about-bio-text,
+#experience .timeline-summary {
+  text-align: left;
+  text-justify: auto;
+}
+
+@media (max-width: 760px) {
+  .hero-intro,
+  #about .about-bio-text,
+  #experience .timeline-summary,
+  #experience .resp-item,
+  #projects .pcard-desc,
+  #projects .pcard-highlights li {
+    text-align: left;
+    line-height: 1.55;
+  }
+
+  .section-title,
+  #projects .section-title,
+  #skills .section-title,
+  #experience .section-title {
+    font-size: clamp(1.75rem, 6vw, 2.15rem) !important;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  .section-desc,
+  #projects .section-desc,
+  #skills .section-desc,
+  #experience .section-desc {
+    max-width: 65ch;
+    font-size: 0.98rem !important;
+    line-height: 1.55;
+    text-align: left;
+  }
+}
+
+@media (max-width: 420px) {
+  #projects > .container,
+  #skills > .container,
+  #experience > .container,
+  #about > .container {
+    width: calc(100% - 1.25rem);
+  }
+
+  #projects .pcard-body,
+  #skills .skill-category-card,
+  #experience .timeline-card {
+    padding-inline: 0.9rem;
+  }
+
+  #projects .pcard-footer {
+    padding-inline: 0.85rem;
+  }
+}
+
+/* Subdue project color accents so content remains the visual focus. */
+#projects .pcard-accent-beam {
+  opacity: 0.3;
+  box-shadow: none;
+}
+
+#projects .pcard-radial-glow {
+  opacity: 0.08;
+}
+
+#projects .pcard:hover .pcard-radial-glow {
+  opacity: 0.12;
+}
+
+#projects .pcard:hover {
+  border-color: rgba(var(--p-rgb, 125, 164, 184), 0.28);
+  box-shadow: 0 16px 34px -12px rgba(0, 0, 0, 0.72),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+#projects .pcard-badge {
+  background: rgba(var(--p-rgb, 125, 164, 184), 0.07);
+  border-color: rgba(var(--p-rgb, 125, 164, 184), 0.22);
+}
+
+#projects .highlight-icon,
+#projects .highlight-check {
+  background: rgba(var(--p-rgb, 125, 164, 184), 0.07);
+  border-color: rgba(var(--p-rgb, 125, 164, 184), 0.2);
+}
+
+#projects .pcard:hover .highlight-icon,
+#projects .pcard:hover .highlight-check {
+  background: rgba(var(--p-rgb, 125, 164, 184), 0.11);
+  border-color: rgba(var(--p-rgb, 125, 164, 184), 0.28);
+}
+
+#projects .pcard-tags .tech-tag:hover {
+  border-color: rgba(var(--p-rgb, 125, 164, 184), 0.28);
+  background: rgba(var(--p-rgb, 125, 164, 184), 0.07);
+}
+
+#projects .pcard-btn-live {
+  color: #b8eaff;
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.28);
+  box-shadow: none;
+}
+
+#projects .pcard-btn-live:hover,
+#projects .pcard-btn-live:focus-visible {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: rgba(56, 189, 248, 0.42);
+  color: #d8f4ff;
+  box-shadow: none;
+}
