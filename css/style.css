@@ -6954,6 +6954,10 @@ html[data-theme="light"] #about .edu-featured h3 .edu-affiliation {
 
 /* Compact short-desktop layout (common 1366x768 laptop viewport). */
 @media screen and (min-width: 1200px) and (max-width: 1599px) and (max-height: 850px) {
+  #projects .projects-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .hero-section {
     min-height: 100svh;
     padding-block: 5.25rem 1.25rem;
@@ -7434,6 +7438,11 @@ html[data-theme="light"] #about .edu-featured h3 .edu-affiliation {
 
   #experience .section-header {
     margin-bottom: 0.4rem;
+  }
+
+  /* Fill the usable browser height so the final section scrolls into view cleanly. */
+  #experience.section {
+    min-height: calc(100svh - 70px);
   }
 
   #experience .timeline-card {
