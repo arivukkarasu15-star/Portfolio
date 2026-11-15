@@ -6951,3 +6951,207 @@ html:not([data-theme="light"]) #projects .pcard-footer {
 html[data-theme="light"] #about .edu-featured h3 .edu-affiliation {
   color: #52647a;
 }
+
+/* Compact short-desktop layout (common 1366x768 laptop viewport). */
+@media screen and (min-width: 1200px) and (max-width: 1599px) and (max-height: 850px) {
+  .hero-section {
+    min-height: 100svh;
+    padding-block: 5.25rem 1.25rem;
+  }
+
+  .hero-grid {
+    gap: clamp(1.5rem, 2.6vw, 2.5rem);
+  }
+
+  .hero-title-group h1 {
+    font-size: clamp(2.8rem, 4.5vw, 4rem);
+  }
+
+  .hero-title-group h2 {
+    font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  }
+
+  .hero-intro {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .hero-portrait-card {
+    width: min(100%, 390px);
+  }
+
+  #about.section,
+  #skills.section,
+  #projects.section,
+  #experience.section {
+    min-height: auto;
+    padding-block: 1.65rem;
+  }
+
+  #about .section-header,
+  #skills .section-header,
+  #projects .section-header,
+  #experience .section-header {
+    margin-bottom: 0.85rem;
+  }
+
+  #about .section-title,
+  #skills .section-title,
+  #projects .section-title,
+  #experience .section-title {
+    font-size: clamp(1.8rem, 2.25vw, 2.15rem) !important;
+  }
+
+  #about .about-card-box {
+    gap: 0.7rem;
+    padding: 0.9rem 1.1rem;
+  }
+
+  #about .about-bio-text {
+    gap: 0.55rem;
+  }
+
+  #about .about-bio-text p {
+    font-size: 0.96rem !important;
+    line-height: 1.55;
+  }
+
+  #about .education-cards-grid {
+    gap: 0.55rem;
+  }
+
+  #about .education-cards-grid .edu-featured {
+    min-height: 78px;
+    padding: 0.55rem 0.9rem;
+    column-gap: 0.9rem;
+  }
+
+  #skills .skills-grid {
+    gap: 0.8rem;
+  }
+
+  #skills .skill-category-card {
+    padding: 1.05rem 1rem 1rem;
+  }
+
+  #skills .category-header {
+    gap: 0.7rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.7rem;
+  }
+
+  #skills .category-icon-box {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+  }
+
+  #skills .skills-list {
+    grid-template-rows: repeat(4, minmax(68px, auto));
+    gap: 0.5rem;
+  }
+
+  #skills .skill-row {
+    min-height: 68px;
+    padding: 0.6rem 0.75rem;
+  }
+
+  #skills .skill-name {
+    font-size: 0.98rem !important;
+  }
+
+  #skills .skill-focus {
+    font-size: 0.8rem !important;
+  }
+
+  #projects .projects-grid {
+    gap: 0.75rem;
+  }
+
+  #projects .pcard-body {
+    gap: 0.65rem;
+    padding: 0.85rem;
+  }
+
+  #projects .pcard-title {
+    font-size: 1.05rem !important;
+  }
+
+  #projects .pcard-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.42;
+  }
+
+  #projects .pcard-highlights {
+    min-height: 6.2em;
+    gap: 0.45rem;
+  }
+
+  #projects .pcard-highlights li {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+  }
+
+  #projects .pcard-tags {
+    gap: 0.3rem;
+    padding: 0.55rem;
+  }
+
+  #projects .pcard-tags .tech-tag {
+    min-height: 25px;
+    padding: 0.18rem 0.48rem;
+  }
+
+  #projects .pcard-footer {
+    gap: 0.32rem;
+    padding: 0.65rem 0.7rem;
+  }
+
+  #projects .pcard-btn-detail,
+  #projects .pcard-btn-live,
+  #projects .pcard-btn-gh {
+    min-height: 36px;
+    padding: 0.45rem 0.22rem;
+    font-size: 0.76rem !important;
+  }
+
+  #experience > .container {
+    flex: initial;
+  }
+
+  #experience .timeline-container {
+    gap: 0.8rem;
+  }
+
+  #experience .timeline-card {
+    gap: 0.65rem;
+    padding: 1rem;
+  }
+
+  #experience .timeline-header {
+    padding-bottom: 0.6rem;
+  }
+
+  #experience .timeline-role {
+    font-size: 1.12rem !important;
+  }
+
+  #experience .timeline-summary,
+  #experience .resp-item {
+    font-size: 0.86rem !important;
+    line-height: 1.42;
+  }
+
+  #experience .responsibilities-grid {
+    gap: 0.4rem;
+  }
+
+  #experience .resp-item {
+    padding: 0.48rem 0.68rem;
+  }
+
+  #experience .experience-skills {
+    gap: 0.3rem;
+    padding-top: 0.55rem;
+  }
+}
