@@ -7154,4 +7154,250 @@ html[data-theme="light"] #about .edu-featured h3 .edu-affiliation {
     gap: 0.3rem;
     padding-top: 0.55rem;
   }
+
+  /* Reduce vertical footprint further on 1366x768-class screens. */
+  #about.section,
+  #projects.section,
+  #experience.section {
+    padding-block: 1rem;
+  }
+
+  #about .section-header,
+  #projects .section-header,
+  #experience .section-header {
+    margin-bottom: 0.6rem;
+  }
+
+  #about .section-title,
+  #projects .section-title,
+  #experience .section-title {
+    font-size: 1.72rem !important;
+    line-height: 1.15;
+  }
+
+  #about .section-desc,
+  #projects .section-desc,
+  #experience .section-desc {
+    font-size: 0.84rem !important;
+    line-height: 1.35;
+  }
+
+  #about .about-card-box {
+    gap: 0.55rem;
+    padding: 0.72rem 0.9rem;
+  }
+
+  #about .about-bio-text {
+    gap: 0.4rem;
+  }
+
+  #about .about-bio-text p {
+    font-size: 0.88rem !important;
+    line-height: 1.42;
+  }
+
+  #about .about-highlights-strip {
+    gap: 0.55rem;
+  }
+
+  #about .education-heading {
+    padding-bottom: 0.42rem;
+  }
+
+  #about .education-heading .sub-card-title {
+    font-size: 0.98rem;
+  }
+
+  #about .education-cards-grid {
+    gap: 0.38rem;
+  }
+
+  #about .education-cards-grid .edu-featured {
+    min-height: 68px;
+    padding: 0.42rem 0.72rem;
+    column-gap: 0.65rem;
+  }
+
+  #about .edu-featured h3 {
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+
+  #about .edu-featured > p {
+    font-size: 0.76rem;
+    line-height: 1.3;
+  }
+
+  #about .edu-feature-top time {
+    padding: 0.16rem 0.38rem;
+    font-size: 0.63rem;
+  }
+
+  #about .edu-level {
+    font-size: 0.58rem;
+  }
+
+  #about .edu-feature-bottom > strong {
+    padding: 0.3rem 0.55rem;
+  }
+
+  #about .edu-feature-bottom > strong > span {
+    font-size: 1.35rem;
+  }
+
+  #projects .projects-grid {
+    gap: 0.6rem;
+  }
+
+  #projects .pcard-body {
+    gap: 0.45rem;
+    padding: 0.68rem;
+  }
+
+  #projects .pcard-top {
+    min-height: 22px;
+  }
+
+  #projects .pcard-badge,
+  #projects .pcard-badge-meta {
+    font-size: 0.66rem;
+  }
+
+  #projects .pcard-heading {
+    grid-template-rows: auto auto;
+    gap: 0.22rem;
+  }
+
+  #projects .pcard-title {
+    min-height: 0;
+    padding-bottom: 0.38rem;
+    font-size: 0.94rem !important;
+    line-height: 1.25;
+  }
+
+  #projects .pcard-desc {
+    min-height: 0;
+    font-size: 0.78rem !important;
+    line-height: 1.32;
+  }
+
+  #projects .pcard-highlights {
+    min-height: 0;
+    grid-template-rows: repeat(2, minmax(0, auto));
+    gap: 0.32rem;
+  }
+
+  #projects .pcard-highlights li {
+    min-height: 0;
+    gap: 0.42rem;
+    padding: 0.3rem 0.42rem;
+    font-size: 0.76rem !important;
+    line-height: 1.32;
+  }
+
+  #projects .highlight-icon,
+  #projects .highlight-check {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+  }
+
+  #projects .pcard-tags {
+    gap: 0.24rem;
+    padding: 0.42rem;
+  }
+
+  #projects .pcard-tags::before {
+    font-size: 0.56rem;
+  }
+
+  #projects .pcard-tags .tech-tag {
+    min-height: 22px;
+    padding: 0.12rem 0.36rem;
+    font-size: 0.66rem !important;
+  }
+
+  #projects .pcard-footer {
+    gap: 0.26rem;
+    padding: 0.5rem 0.55rem;
+  }
+
+  #projects .pcard-btn-detail,
+  #projects .pcard-btn-live,
+  #projects .pcard-btn-gh {
+    min-height: 31px;
+    font-size: 0.68rem !important;
+  }
+
+  #experience > .container {
+    width: 95%;
+  }
+
+  #experience .timeline-container {
+    gap: 0.6rem;
+  }
+
+  #experience .timeline-card {
+    gap: 0.48rem;
+    padding: 0.78rem;
+    border-radius: 12px;
+  }
+
+  #experience .timeline-header {
+    gap: 0.35rem 0.55rem;
+    padding-bottom: 0.42rem;
+  }
+
+  #experience .timeline-role {
+    font-size: 0.98rem !important;
+    line-height: 1.22;
+  }
+
+  #experience .timeline-company {
+    margin-top: 0.16rem;
+    font-size: 0.75rem;
+  }
+
+  #experience .timeline-date-badge {
+    padding: 0.2rem 0.48rem;
+    font-size: 0.64rem !important;
+  }
+
+  #experience .timeline-summary,
+  #experience .resp-item {
+    font-size: 0.76rem !important;
+    line-height: 1.32;
+  }
+
+  #experience .responsibilities-grid {
+    gap: 0.3rem;
+  }
+
+  #experience .resp-item {
+    gap: 0.45rem;
+    padding: 0.38rem 0.52rem;
+  }
+
+  #experience .resp-icon,
+  #experience .resp-check {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+  }
+
+  #experience .experience-skills {
+    gap: 0.24rem;
+    padding-top: 0.38rem;
+  }
+
+  #experience .experience-skills-label {
+    padding-bottom: 0.28rem;
+    font-size: 0.56rem;
+  }
+
+  #experience .experience-skills .tech-tag {
+    min-height: 22px;
+    padding: 0.14rem 0.42rem;
+    font-size: 0.66rem !important;
+  }
 }
