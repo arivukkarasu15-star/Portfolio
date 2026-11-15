@@ -7423,6 +7423,11 @@ html[data-theme="light"] #about .edu-featured h3 .edu-affiliation {
     margin-bottom: 0.35rem;
   }
 
+  /* Center the four-card row within its viewport, clear of the next section. */
+  #projects.section {
+    min-height: calc(100svh - 70px);
+  }
+
   #projects .pcard-body {
     gap: 0.3rem;
     padding: 0.5rem;
