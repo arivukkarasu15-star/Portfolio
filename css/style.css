@@ -7401,3 +7401,51 @@ html[data-theme="light"] #about .edu-featured h3 .edu-affiliation {
     font-size: 0.66rem !important;
   }
 }
+
+/* Browser viewport is shorter than the physical display on 1366x768 laptops. */
+@media screen and (min-width: 1200px) and (max-width: 1599px) and (max-height: 700px) {
+  #about.section,
+  #projects.section,
+  #experience.section {
+    padding-block: 0.55rem;
+  }
+
+  #about .education-cards-grid .edu-featured {
+    min-height: 62px;
+    padding-block: 0.3rem;
+  }
+
+  #projects .section-header {
+    margin-bottom: 0.35rem;
+  }
+
+  #projects .pcard-body {
+    gap: 0.3rem;
+    padding: 0.5rem;
+  }
+
+  #projects .pcard-tags {
+    padding: 0.3rem;
+  }
+
+  #projects .pcard-footer {
+    padding-block: 0.3rem;
+  }
+
+  #experience .section-header {
+    margin-bottom: 0.4rem;
+  }
+
+  #experience .timeline-card {
+    gap: 0.38rem;
+    padding: 0.62rem;
+  }
+
+  #experience .resp-item {
+    padding-block: 0.3rem;
+  }
+
+  #experience .experience-skills {
+    padding-top: 0.28rem;
+  }
+}
